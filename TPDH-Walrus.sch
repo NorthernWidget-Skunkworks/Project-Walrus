@@ -7832,7 +7832,7 @@ depth meter: 0-5 bar)</text>
 <pinref part="PAD10" gate="P" pin="P"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="SPI-I2C-SWITCH" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="AD/CS"/>
 <wire x1="162.56" y1="144.78" x2="200.66" y2="144.78" width="0.1524" layer="91"/>
