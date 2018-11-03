@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mm" altunit="mm"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="1" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -28,15 +28,15 @@
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -97,8 +97,8 @@
 <layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="no" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="no" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="yes"/>
-<layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
-<layer number="122" name="_bsilk" color="7" fill="1" visible="no" active="yes"/>
+<layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="123" name="tTestmark" color="7" fill="1" visible="no" active="yes"/>
 <layer number="124" name="bTestmark" color="7" fill="1" visible="no" active="yes"/>
 <layer number="125" name="_tNames" color="7" fill="1" visible="no" active="yes"/>
@@ -170,6 +170,19 @@
 <text x="13.399" y="16.8745" size="0.6096" layer="21" rot="SR270">10-26-2018</text>
 <wire x1="0" y1="2" x2="2" y2="0" width="0" layer="20" curve="90"/>
 <wire x1="14" y1="0" x2="16" y2="2" width="0" layer="20" curve="90"/>
+<text x="3.256" y="7.112" size="0.6" layer="52" rot="MR0">V-</text>
+<text x="5.7" y="7.112" size="0.6" layer="52" rot="MR0">Tx+</text>
+<text x="7.6" y="7.112" size="0.6" layer="52" rot="MR0">Tx-</text>
+<text x="9.556" y="7.112" size="0.6" layer="52" rot="MR0">Rx-</text>
+<text x="11.556" y="7.112" size="0.6" layer="52" rot="MR0">Rx+</text>
+<text x="13.456" y="7.112" size="0.6" layer="52" rot="MR0">V+</text>
+<text x="5.856" y="11.112" size="0.6" layer="52" rot="MR0">SCL</text>
+<text x="7.956" y="11.112" size="0.6" layer="52" rot="MR0">SDA</text>
+<text x="9.456" y="11.112" size="0.6" layer="52" rot="MR0">V-</text>
+<text x="11.456" y="11.112" size="0.6" layer="52" rot="MR0">V+</text>
+<text x="14.156" y="9.112" size="0.6" layer="52" rot="MR0">I2C
+&lt;3 m</text>
+<text x="10.956" y="4.012" size="0.6" layer="52" rot="MR0">RS485: &lt;1000 m</text>
 </plain>
 <libraries>
 <library name="MS5803">
@@ -1507,7 +1520,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="12.6487" y1="11.1247" x2="10.5212875" y2="11.1247" width="0.4064" layer="16"/>
 <wire x1="10.5212875" y1="11.1247" x2="9.3655875" y2="9.969" width="0.4064" layer="16"/>
 </signal>
-<signal name="N$1">
+<signal name="SPI-I2C-SWITCH">
 <contactref element="U1" pad="3"/>
 <contactref element="JP1" pad="2"/>
 <wire x1="2.1218" y1="35.14740625" x2="2.3377" y2="34.93150625" width="0.254" layer="1"/>
@@ -1750,6 +1763,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
