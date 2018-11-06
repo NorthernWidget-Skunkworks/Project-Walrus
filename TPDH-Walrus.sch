@@ -10442,6 +10442,23 @@ depth meter: 0-5 bar)</text>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="113,1,139.596,107.846,FRAME1,,,,,"/>
+<approved hash="113,1,144.148,8.16356,H1,,,,,"/>
+<approved hash="113,1,154.308,8.16356,H2,,,,,"/>
+<approved hash="113,1,17.5006,31.7475,PAD1,,,,,"/>
+<approved hash="113,1,17.5006,26.6675,PAD2,,,,,"/>
+<approved hash="113,1,17.5006,21.5875,PAD3,,,,,"/>
+<approved hash="113,1,17.5006,16.5075,PAD4,,,,,"/>
+<approved hash="113,1,17.5006,11.4275,PAD5,,,,,"/>
+<approved hash="113,1,17.5006,6.34746,PAD6,,,,,"/>
+<approved hash="113,1,47.9806,31.7475,PAD7,,,,,"/>
+<approved hash="113,1,47.9806,26.6675,PAD8,,,,,"/>
+<approved hash="113,1,47.9806,21.5875,PAD9,,,,,"/>
+<approved hash="113,1,48.2127,16.5075,PAD10,,,,,"/>
+<approved hash="113,1,201.93,101.795,U3,,,,,"/>
+<approved hash="113,1,164.468,8.16356,H3,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
