@@ -9926,7 +9926,7 @@ depth meter: 0-5 bar)</text>
 <segment>
 <pinref part="U1" gate="G$1" pin="SDO"/>
 <wire x1="203.2" y1="175.26" x2="190.5" y2="175.26" width="0.1524" layer="91"/>
-<label x="190.5" y="175.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+<label x="190.5" y="175.26" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="VTHERM-" class="0">
@@ -10251,9 +10251,9 @@ depth meter: 0-5 bar)</text>
 <label x="73.66" y="170.18" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U3" gate="G$1" pin="PA1"/>
-<wire x1="187.96" y1="111.76" x2="177.8" y2="111.76" width="0.1524" layer="91"/>
-<label x="177.8" y="111.76" size="1.778" layer="95" rot="R180" xref="yes"/>
+<pinref part="U3" gate="G$1" pin="PA6"/>
+<wire x1="187.96" y1="99.06" x2="167.64" y2="99.06" width="0.1524" layer="91"/>
+<label x="167.64" y="99.06" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="SN_DE" class="0">
@@ -10302,12 +10302,6 @@ depth meter: 0-5 bar)</text>
 <segment>
 <pinref part="U3" gate="G$1" pin="PA5"/>
 <wire x1="187.96" y1="101.6" x2="177.8" y2="101.6" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$15" class="0">
-<segment>
-<pinref part="U3" gate="G$1" pin="PA6"/>
-<wire x1="187.96" y1="99.06" x2="182.88" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SDA_HV" class="0">
@@ -10479,6 +10473,12 @@ depth meter: 0-5 bar)</text>
 <pinref part="C11" gate="G$1" pin="1"/>
 <wire x1="106.68" y1="147.32" x2="106.68" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="+3V22" gate="G$1" pin="+3V3"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="U3" gate="G$1" pin="PA1"/>
+<wire x1="187.96" y1="111.76" x2="177.8" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
