@@ -1619,24 +1619,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="2.4356" y1="21.4254" x2="2.4356" y2="20.25631875" width="0.254" layer="1"/>
 <wire x1="1.842" y1="22.019" x2="2.4356" y2="21.4254" width="0.254" layer="1"/>
 </signal>
-<signal name="N$8">
-<contactref element="U3" pad="13"/>
-</signal>
-<signal name="N$10">
-<contactref element="U3" pad="11"/>
-</signal>
-<signal name="N$2">
-<contactref element="U3" pad="7"/>
-</signal>
-<signal name="N$7">
-<contactref element="U3" pad="5"/>
-</signal>
-<signal name="N$9">
-<contactref element="U3" pad="4"/>
-</signal>
-<signal name="N$14">
-<contactref element="U3" pad="2"/>
-</signal>
 <signal name="SDA_HV">
 <contactref element="U7" pad="6"/>
 <contactref element="R8" pad="1"/>
@@ -1807,9 +1789,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <via x="13.208" y="32.004" extent="1-16" drill="0.35"/>
 <wire x1="13.208" y1="32.004" x2="13.335" y2="31.877" width="0.254" layer="16"/>
 <wire x1="13.335" y1="31.877" x2="14.732" y2="31.877" width="0.254" layer="16"/>
-</signal>
-<signal name="N$1">
-<contactref element="U3" pad="6"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
