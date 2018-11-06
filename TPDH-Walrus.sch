@@ -9923,6 +9923,11 @@ depth meter: 0-5 bar)</text>
 <wire x1="215.9" y1="109.22" x2="220.98" y2="109.22" width="0.1524" layer="91"/>
 <label x="220.98" y="109.22" size="1.778" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="SDO"/>
+<wire x1="203.2" y1="175.26" x2="190.5" y2="175.26" width="0.1524" layer="91"/>
+<label x="190.5" y="175.26" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="VTHERM-" class="0">
 <segment>
