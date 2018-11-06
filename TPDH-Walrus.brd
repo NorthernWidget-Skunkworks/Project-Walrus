@@ -1210,8 +1210,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="5.9878" y1="19.5768" x2="4.26459375" y2="19.5768" width="0.254" layer="1"/>
 <wire x1="3.4356" y1="20.9254" x2="3.4356" y2="20.40579375" width="0.254" layer="1"/>
 <wire x1="3.4356" y1="20.40579375" x2="4.26459375" y2="19.5768" width="0.254" layer="1"/>
-<wire x1="7.159" y1="37.762" x2="3.342" y2="21.019" width="0" layer="19" extent="1-1"/>
 <wire x1="3.342" y1="21.019" x2="3.342" y2="21.019" width="0.254" layer="1"/>
+<contactref element="U1" pad="8"/>
+<wire x1="8.263" y1="32.1095" x2="7.159" y2="37.762" width="0" layer="19" extent="1-1"/>
+<wire x1="3.342" y1="21.019" x2="8.263" y2="32.1095" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VTHERM-">
 <contactref element="U4" pad="6"/>
