@@ -9,7 +9,7 @@
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -196,6 +196,10 @@
 <text x="0.456" y="8.412" size="0.6" layer="51">I2C
 &lt;3 m</text>
 <text x="4.956" y="3.712" size="0.6" layer="51">RS485: &lt;1000 m</text>
+<text x="2.444" y="28.488" size="0.6" layer="52" rot="MR180">ALT</text>
+<text x="2.444" y="27.488" size="0.6" layer="52" rot="MR180">0x76</text>
+<text x="4.856" y="31.312" size="0.6" layer="52" rot="MR0">DEFAULT</text>
+<text x="3.856" y="32.312" size="0.6" layer="52" rot="MR0">0x77</text>
 </plain>
 <libraries>
 <library name="MS5803">
