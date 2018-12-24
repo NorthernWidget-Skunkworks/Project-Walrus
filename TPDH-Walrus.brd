@@ -24,15 +24,15 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="yes"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
@@ -59,7 +59,7 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
@@ -167,7 +167,6 @@
 <wire x1="0" y1="37.845" x2="0" y2="2" width="0" layer="20"/>
 <dimension x1="0" y1="34.7245" x2="9.5125" y2="34.7245" x3="4.75625" y3="37.2745" textsize="1.778" layer="47"/>
 <text x="5.969" y="52.705" size="1.778" layer="49">Andrew D. Wickert</text>
-<text x="11.399" y="25.8745" size="0.6096" layer="52" rot="SR270">10-26-2018</text>
 <wire x1="0" y1="2" x2="2" y2="0" width="0" layer="20" curve="90"/>
 <wire x1="14" y1="0" x2="16" y2="2" width="0" layer="20" curve="90"/>
 <text x="2.056" y="7.112" size="0.6" layer="52" rot="MR0">V-</text>
@@ -182,7 +181,7 @@
 <text x="11.81" y="10.612" size="0.6" layer="52" rot="MR0" align="bottom-center">V+</text>
 <text x="15.456" y="8.412" size="0.6" layer="52" rot="MR0">I2C
 &lt;3 m</text>
-<text x="11.256" y="3.712" size="0.6" layer="52" rot="MR0">RS485: &lt;1000 m</text>
+<text x="11.5" y="3.7" size="0.6" layer="52" rot="MR0">RS485: &lt;1000 m</text>
 <text x="1.256" y="7.112" size="0.6" layer="51">V-</text>
 <text x="3.4" y="7.112" size="0.6" layer="51">Tx+</text>
 <text x="6" y="7.112" size="0.6" layer="51">Tx-</text>
@@ -195,17 +194,19 @@
 <text x="6.79" y="10.612" size="0.6" layer="51" align="bottom-center">SCL</text>
 <text x="0.456" y="8.412" size="0.6" layer="51">I2C
 &lt;3 m</text>
-<text x="4.956" y="3.712" size="0.6" layer="51">RS485: &lt;1000 m</text>
+<text x="4.4" y="3.7" size="0.6" layer="51">RS485: &lt;1000 m</text>
 <text x="2.444" y="28.088" size="0.6" layer="52" rot="MR180">ALT</text>
-<text x="2.444" y="27.188" size="0.6" layer="52" rot="MR180">0x76</text>
+<text x="2.2" y="26.6" size="0.6" layer="52" rot="MR180">0x76</text>
 <text x="4.856" y="31.812" size="0.6" layer="52" rot="MR0">DEFAULT</text>
-<text x="3.756" y="32.712" size="0.6" layer="52" rot="MR0">0x77</text>
-<text x="13.399" y="25.8745" size="0.6096" layer="52" rot="SR270">Project-TPDH-Walrus</text>
-<text x="12.399" y="25.8745" size="0.6096" layer="52" rot="SR270">version 0.0.0</text>
-<text x="9.399" y="25.8745" size="0.6096" layer="52" rot="SR270">A. Wickert</text>
-<text x="7.399" y="25.8745" size="0.6096" layer="52" rot="SR270">Based on TP-DownHole by
-Schulz, Sandell, Wickert</text>
-<text x="5.399" y="25.8745" size="0.6096" layer="52" rot="SR270">Northern Widget LLC
+<text x="4.1" y="32.7" size="0.6" layer="52" rot="MR0">0x77</text>
+<text x="14.4" y="27.1" size="0.6096" layer="52" rot="MR270">Project-TPDH-Walrus
+Version 0.0.0
+2018.10.26
+
+A. Wickert
+Based on TP-DownHole by
+Schulz, Sandell, Wickert
+Northern Widget LLC
 and University of Minnesota</text>
 </plain>
 <libraries>
