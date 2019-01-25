@@ -51,9 +51,9 @@ SlowSoftWire Wire = SlowSoftWire(4, 6);
 #define EOF ']'
 
 // Pins for ATTiny1634
-#define SN_DE = 13;
-#define SN_RE = 14;
-#define REF_EN = 4;
+#define SN_DE 13
+#define SN_RE 14
+#define REF_EN 4
 
 uint16_t coefficient[8];// Coefficients;
 // static uint16_t ConvCoef[] = {18, 5, 17, 7, 10000, 3, 33, 3, 3, 7, 3, 0, 3, 0, 0, 0}; //Coefficients for data conversion
