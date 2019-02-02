@@ -2,7 +2,7 @@
 // #define I2C_HARDWARE 1
 #include <SlowSoftWire.h> 
 // #include <SlowSoftI2CMaster.h>
-// #include <Wire.h>
+ #include <Wire.h>
 #include <EEPROM.h>
 // #include <math.h>
 //#define SDA_PORT PORTA
@@ -11,7 +11,7 @@
 //#define SCL_PIN 4 // = A5
 
 // #define GUT 
-SlowSoftWire Wire = SlowSoftWire(4, 6);
+//SlowSoftWire Wire = SlowSoftWire(12, 16);
 // SlowSoftI2CMaster si = SlowSoftI2CMaster(4, 6, true);  //Initialize software I2C
 
 #define MODEL 0x1201
