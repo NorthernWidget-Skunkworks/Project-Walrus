@@ -653,21 +653,6 @@ Source: http://focus.ti.com/lit/ds/slcs146e/slcs146e.pdf</description>
 <rectangle x1="-5.96" y1="3.8" x2="-5.47" y2="5.32" layer="51"/>
 <circle x="-6.604" y="-4.572" radius="0.179603125" width="0.127" layer="21"/>
 </package>
-<package name="DQE_R-PX2SON-N8">
-<smd name="8" x="-0.525" y="0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
-<smd name="7" x="-0.175" y="0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
-<smd name="6" x="0.175" y="0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
-<smd name="5" x="0.525" y="0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
-<smd name="4" x="0.525" y="-0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
-<smd name="3" x="0.175" y="-0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
-<smd name="2" x="-0.175" y="-0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
-<smd name="1" x="-0.525" y="-0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
-<wire x1="-0.725" y1="0.525" x2="-0.725" y2="-0.525" width="0.127" layer="21"/>
-<wire x1="-0.725" y1="-0.525" x2="0.725" y2="-0.525" width="0.127" layer="21"/>
-<wire x1="0.725" y1="-0.525" x2="0.725" y2="0.525" width="0.127" layer="21"/>
-<wire x1="0.725" y1="0.525" x2="-0.725" y2="0.525" width="0.127" layer="21"/>
-<circle x="-1.016" y="-0.762" radius="0.127" width="0.127" layer="21"/>
-</package>
 <package name="DQM_R-PX2SON-N8">
 <smd name="8" x="-0.6" y="0.45" dx="0.2" dy="0.7" layer="1"/>
 <smd name="7" x="-0.2" y="0.45" dx="0.2" dy="0.7" layer="1"/>
@@ -847,6 +832,7 @@ Soure: &lt;a href="http://www.ti.com/lit/ds/symlink/ads7042.pdf"&gt; Data sheet 
 <wire x1="1.5" y1="-1.5" x2="1.5" y2="1.5" width="0.127" layer="21"/>
 <wire x1="1.5" y1="1.5" x2="-1.5" y2="1.5" width="0.127" layer="21"/>
 <circle x="-1.778" y="1.778" radius="0.179603125" width="0.127" layer="21"/>
+<text x="0" y="-2.032" size="0.6096" layer="25" font="vector" ratio="15" align="center">&gt;NAME</text>
 </package>
 <package name="DFN_8_2X3">
 <description>DFN, 8 lead, 2x3mm body &lt;br&gt;
@@ -865,6 +851,22 @@ Ref &lt;a href = http://ww1.microchip.com/downloads/en/DeviceDoc/MCP9808-0.5C-Ma
 <wire x1="1" y1="-1.5" x2="1" y2="1.5" width="0.127" layer="21"/>
 <wire x1="1" y1="1.5" x2="-1" y2="1.5" width="0.127" layer="21"/>
 <circle x="-1.27" y="-1.651" radius="0.127" width="0.127" layer="21"/>
+</package>
+<package name="DQE_R-PX2SON-N8">
+<smd name="8" x="-0.525" y="0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
+<smd name="7" x="-0.175" y="0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
+<smd name="6" x="0.175" y="0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
+<smd name="5" x="0.525" y="0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
+<smd name="4" x="0.525" y="-0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
+<smd name="3" x="0.175" y="-0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
+<smd name="2" x="-0.175" y="-0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
+<smd name="1" x="-0.525" y="-0.335" dx="0.51" dy="0.19" layer="1" rot="R90"/>
+<wire x1="-0.725" y1="0.525" x2="-0.725" y2="-0.525" width="0.127" layer="21"/>
+<wire x1="-0.725" y1="-0.525" x2="0.725" y2="-0.525" width="0.127" layer="21"/>
+<wire x1="0.725" y1="-0.525" x2="0.725" y2="0.525" width="0.127" layer="21"/>
+<wire x1="0.725" y1="0.525" x2="-0.725" y2="0.525" width="0.127" layer="21"/>
+<circle x="-1.016" y="-0.762" radius="0.127" width="0.127" layer="21"/>
+<text x="0" y="1.143" size="0.6096" layer="25" font="vector" ratio="15" align="center">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -1391,6 +1393,21 @@ http://creativecommons.org/licenses/by-sa/4.0/</text>
 </technology>
 </technologies>
 </device>
+<device name="-2N7002P" package="SOT23-3">
+<connects>
+<connect gate="NMOS" pin="D" pad="3"/>
+<connect gate="NMOS" pin="G" pad="1"/>
+<connect gate="NMOS" pin="S" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="1727-4692-1-ND" constant="no"/>
+<attribute name="MF" value="Nexperia" constant="no"/>
+<attribute name="MPN" value="2N7002P,215" constant="no"/>
+<attribute name="VALUE" value="2N7002" constant="no"/>
+</technology>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="FRAME_A_L" prefix="FRAME" uservalue="yes">
@@ -1890,16 +1907,6 @@ Digikey: &lt;br&gt;&lt;a href = "https://www.digikey.com/product-detail/en/texas
 </connects>
 <technologies>
 <technology name="">
-<attribute name="DIGIKEY" value="" constant="no"/>
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-</technology>
-<technology name="DFN">
-<attribute name="DIGIKEY" value="MCP9808T-E/MCCT-ND" constant="no"/>
-<attribute name="MF" value="Microchip" constant="no"/>
-<attribute name="MPN" value="MCP9808T-E/MC" constant="no"/>
-</technology>
-<technology name="MSOP">
 <attribute name="DIGIKEY" value="MCP9808T-E/MSCT-ND" constant="no"/>
 <attribute name="MF" value="Microchip" constant="no"/>
 <attribute name="MPN" value="MCP9808T-E/MS" constant="no"/>
@@ -1918,7 +1925,11 @@ Digikey: &lt;br&gt;&lt;a href = "https://www.digikey.com/product-detail/en/texas
 <connect gate="G$1" pin="VDD" pad="8"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="MCP9808T-E/MCCT-ND" constant="no"/>
+<attribute name="MF" value="Microchip" constant="no"/>
+<attribute name="MPN" value="MCP9808T-E/MC" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -5392,6 +5403,12 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="MPN" value="RC0603FR-07360KL" constant="no"/>
 <attribute name="VALUE_PART" value="360k" constant="no"/>
 </technology>
+<technology name="4.7K">
+<attribute name="DIGIKEY" value="311-4.70KHRCT-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="RC0603FR-074K7L" constant="no"/>
+<attribute name="VALUE_PART" value="4.7k" constant="no"/>
+</technology>
 <technology name="422K">
 <attribute name="DIGIKEY" value="311-422KHRCT-ND" constant="no"/>
 <attribute name="MF" value="Yageo" constant="no"/>
@@ -6341,6 +6358,11 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="DIGIKEY" value="1276-2083-1-ND" constant="no"/>
 <attribute name="MF" value="Samsung" constant="no"/>
 <attribute name="MPN" value="CL10B474KA8NNNC" constant="no"/>
+</technology>
+<technology name="10PF">
+<attribute name="DIGIKEY" value="311-1058-1-ND" constant="no"/>
+<attribute name="MF" value="Yageo" constant="no"/>
+<attribute name="MPN" value="CC0603JRNPO9BN100CC0603JRNPO9BN100" constant="no"/>
 </technology>
 <technology name="10UF">
 <attribute name="DIGIKEY" value="490-10728-1-ND" constant="no"/>
@@ -11278,7 +11300,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$1" library="bschulz" deviceset="SOLDERCUP_CONN_QUAD" device=""/>
 <part name="U8" library="bschulz" deviceset="NS5A4684S" device=""/>
 <part name="U2" library="bschulz" deviceset="SN65HVD72" device="SOIC" technology="D"/>
-<part name="U4" library="bschulz" deviceset="MCP9808" device="MSOP" technology="DFN"/>
+<part name="U4" library="bschulz" deviceset="MCP9808" device="MSOP"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C6" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF"/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
