@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.2">
+<eagle version="9.2.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -11247,7 +11247,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND3" library="SparkFun-Aesthetics" library_urn="urn:adsk.eagle:library:507" deviceset="GND" device=""/>
 <part name="R5" library="bschulz_passives" deviceset="R-EU_" device="R0402" technology="10K" value="10k"/>
 <part name="U$12" library="bschulz" deviceset="POGO_PAD" device=""/>
-<part name="R6" library="bschulz_passives" deviceset="R-EU_" device="R0402" technology="100"/>
+<part name="R6" library="bschulz_passives" deviceset="R-EU_" device="R0402" technology="100" value="100"/>
 <part name="U5" library="bschulz" deviceset="TPS797*" device="" technology="33"/>
 <part name="C4" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF" value="0.1uF"/>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -11295,14 +11295,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="+3V21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="LOGO1" library="SparkFun-Aesthetics" deviceset="OSHW-LOGO" device="M"/>
 <part name="D1" library="bschulz" deviceset="LED" device="0603" technology="BLUE"/>
-<part name="R1" library="bschulz_passives" deviceset="R-EU_" device="R0402"/>
+<part name="R1" library="bschulz_passives" deviceset="R-EU_" device="R0402" value="1k"/>
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$1" library="bschulz" deviceset="SOLDERCUP_CONN_QUAD" device=""/>
 <part name="U8" library="bschulz" deviceset="NS5A4684S" device=""/>
 <part name="U2" library="bschulz" deviceset="SN65HVD72" device="SOIC" technology="D"/>
 <part name="U4" library="bschulz" deviceset="MCP9808" device="MSOP"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C6" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF"/>
+<part name="C6" library="bschulz_passives" deviceset="C-EU" device="C0402" technology="0.1UF" value="0.1uF"/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="D2" library="bschulz" deviceset="TVS" device="SM712"/>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
