@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.2">
+<eagle version="9.6.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -176,7 +176,7 @@ v0.2.0
 Based on TP-Downhole by
 Schulz, Sandell, Wickert
 
-A. Wickert
+A. Wickert &amp; B. Schulz
 
 Northern Widget LLC
 and University of Minnesota</text>
