@@ -1,6 +1,6 @@
 # The Walrus: A Pressure and Temperature Sensor for Water-Level and Barometric Measurements
 
-![Walrus pup; photo by Max Smith](Images/WalrusPup_MaxSmith.jpg)
+![Walrus pup; photo by Max Smith](Documentation/images/WalrusPup_MaxSmith.jpg)
 
 ***Our Walrus sensor, like this Walrus pup, is equally at home on land or in the water.*** *[Photo by Max Smith](https://commons.wikimedia.org/wiki/File:Walrus_-_Kamogawa_Seaworld_-_pup_-1.jpg)*
 
@@ -8,7 +8,7 @@
 
 The **Walrus** is an open-source sensor that measures temperature and pressure. It may be used in the air as a barometer or underwater as part of a system -- combined with barometric compensation -- to obtain changes in water level.
 
-![Walrus HardMount v0.2.0](Images/Walrus_HardMount_v020_top_annotated_20200427.png)
+![Walrus HardMount v0.2.0](Documentation/images/Walrus_HardMount_v020_top_annotated_20200427.png)
 ***Hard-mount variant of the Walrus.*** Major components are labeled. The pads to attach the watertight plug for the cable (i.e. the "hard mount"), on left, are currently unpopulated. These may be used for this kind of connector, or may have wires soldered directly to them before being embedded in an epoxy or other potting (i.e., waterproofing and encapsulating) compound.
 
 ### Technical specifications
@@ -126,7 +126,7 @@ Using an AVR ISP, upload the following firmware programs from the "Firmware" dir
 
 ## Housing
 
-![Walrus PTH v0.0.0 with enclosure](Images/Walrus_PTH_v000_with_enclosure_and_scale_cleaned_background_20200428.png)
+![Walrus PTH v0.0.0 with enclosure](Documentation/images/Walrus_PTH_v000_with_enclosure_and_scale_cleaned_background_20200428.png)
 
 ***Walrus v0.0.0 PTH and its housing.*** *Left: 3D-printed top of the housing; the slits are to prevent large material from hitting the sensor. Center: the bottom of the housing. Self-tapping holes are to screw the board onto this housing. The cable entering the housing through a tightly-fitting hole on the "south" side of the image has not yet been stripped to expose the ends of the individual wires. A different variant of the housing is longer to allow the user to strip more of the cable if desired while maintaining the cable jacketing in contact with the hole. Top right: Walrus v0.0.0. This fully-functional initial version is significantly larger than the current unit. Note the pressure transducer (white circle) at top left, and the fact that this has pins and hardware for a full-duplex RS-485 connection. Bottom right: U.S. penny for scale; 19.05 mm (0.75 inch) diameter.*
 
