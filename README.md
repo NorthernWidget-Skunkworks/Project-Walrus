@@ -75,6 +75,10 @@ We strongly recommend that circuit boards be printed by a reputible manufacturer
 
 Before you can start to populate the circuit board, meaning adding components to it, you will need solder paste and a stencil. If you have access to a laser cutter, you can create your own stencil (https://learn.adafruit.com/smt-manufacturing/laser-cut-stencils). If you do not, the company that prints the circuit boards should be able to provide one. If all else fails, you can try to cut out a stencil with a small knife, or use a solder-paste syringe, though both of these methods can lead to difficulties (such as bridged connections). Additional information on how to stencil can be found here: https://www.sparkfun.com/tutorials/58.
 
+To help you in using the stencil, we provide STL files for 3D-printable plates in each of the hardware directories. These plates hold the board in place and provide a level surface on which to use the stencil.
+
+>> ADD PLATE FOR HARDMOUNT <<
+
 After this, you can use a tweezers and steady hands, or a pick-and-place machine, to gently place each component over the right pads, and in the right orientation. Do not worry if they are slightly misaligned; the surface tension of the solderi, once it is melted, will help to rotate the components into place.
 
 ### Reflowing circuit boards
@@ -95,6 +99,8 @@ After reflow is complete, check if everything worked. Do you have any jumped con
 ## Wiring and pinout
 
 "Pin" is the name of the pin as labeled on the board. "Wire" is the color of the AlphaWire cable that we use; you may use something different based on what manufacturers exist where you are; that's okay, just record the color convention! (We sometimes use another cable in which we use a white wire for SDA and a green wire for SCL, but have found that AlphaWire brand works best.)
+
+>> Add image of cable ends (optional) and find how to integrate with housing section; cabling is a distinct topic, but the step of attaching the cable lies within the housing-construction step <<
 
 For I2C Mode:
 
