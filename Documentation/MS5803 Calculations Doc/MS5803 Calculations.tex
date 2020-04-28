@@ -1,0 +1,204 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage[svgnames]{xcolor} % Required for colour specification
+\usepackage{amsmath}
+\newcommand*{\plogo}{\fbox{$\mathcal{PL}$}} % Generic dummy publisher logo
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+\usepackage{float}
+
+\usepackage[margin=0.75in]{geometry}
+
+\include{nwseal_slogan_linear_100px.PNG}
+
+\begin{document}
+
+\begin{titlepage} % Suppresses headers and footers on the title page
+%	\begin{figure}[H]
+%
+%\begin{wrapfigure}{l}{0.5\textwidth}
+\includegraphics[width=0.5\textwidth, left]{nwseal_slogan_linear_100px.PNG}
+%%\caption{Caption1}
+%\label{fig:subim1}
+%\end{wrapfigure}
+%
+%\end{figure}
+
+\Huge
+\begin{flushright}
+\textbf{Application Note}
+\end{flushright}
+	\raggedleft % Right align everything
+	
+	\vspace*{\baselineskip} % Whitespace at the top of the page
+	
+	%------------------------------------------------
+	%	Author
+	%------------------------------------------------
+	
+	{\Large Written by\\Bobby Schulz} % Author name
+	
+	\vspace*{0.167\textheight} % Whitespace before the title
+	
+	%------------------------------------------------
+	%	Title and subtitle
+	%------------------------------------------------
+	
+	\textbf{\LARGE Sensors}\\[\baselineskip] % First title line
+	
+	%{\textcolor{Red}{\Huge \LaTeX ~Templates}}\\[\baselineskip] % Main title line which draws the focus of the reader
+	MS5803 Pressure and Temperature Sensor 
+	{\Large \textit{Conversion Calculations}} % Subtitle
+	
+	\vfill % Whitespace between the titles and the publisher
+	
+	%------------------------------------------------
+	%	Publisher
+	%------------------------------------------------
+	
+	{\large Developed and Distributed by Northern Widget LLC} % Publisher and logo
+	
+	\vspace*{3\baselineskip} % Whitespace at the bottom of the page
+
+\end{titlepage}
+
+%\begin{figure}[H]
+%
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%\includegraphics[width=0.5\textwidth, left]{nwseal_slogan_linear_100px.PNG}
+%%\caption{Caption1}
+%\label{fig:subim1}
+%\end{wrapfigure}
+%
+%\end{figure}
+
+%\large
+%\begin{flushright}
+%Application Note
+%\end{flushright}
+
+%\pagebreak
+
+\begin{center}
+\Large
+MS5803 Conversion Calculations and Coefficients
+\end{center}
+
+\normalsize
+
+Equations used for the conversion process between the digital measurements and the resulting readings can be grouped into two categories, first order and second order, we will deal with the first order conversion first
+\\
+\\
+Values retrieved from the MS5803 unit are $C1, C2, C3, C4, C5, C6, D1,D2$
+To calculate temperature, Eqn. \ref{eqn:TempDif} and Eqn. \ref{eqn:Temp}. These equations are constant across all MS5803 models
+
+\begin{equation}
+dT = D2 - T_{REF} = D2 - C5 \times 2^8
+\label{eqn:TempDif}
+\end{equation}
+
+\begin{equation}
+TEMP = 2000 + dT \times C6 / 2^{23}
+\label{eqn:Temp}
+\end{equation}
+
+Next, to calculate pressure, we will use Eqn. \ref{eqn:Offset}, Eqn. \ref{eqn:Sens}, Eqn. \ref{eqn:Pressure} and Eqn. \ref{eqn:PressureBar}. In this case $OFF$ is the offset to the reference temperature, $SENS$ is the sensitivity at the actual temperature, and finally, $P$ is the pressure. We introduce the coefficients $\mathbin{\color{red}A, B, C, D, E}$ which vary depending on which sensor model is being used, as well as $P_{BAR}$ which is the pressure given in Bars.
+
+\begin{equation}
+OFF = C2 \times 2^{\mathbin{\color{red}A}} + (C4 \times dT)/2^{\mathbin{\color{red}B}}
+\label{eqn:Offset}
+\end{equation}
+
+\begin{equation}
+SENS = C1 \times 2^{\mathbin{\color{red}C}} + (C3\times dT) / 2^{\mathbin{\color{red}D}}
+\label{eqn:Sens}
+\end{equation}
+
+\begin{equation}
+P = D1 \times SENSE - OFF = (D1 \times SENS/2^{21} - OFF)/2^{15}
+\label{eqn:Pressure}
+\end{equation}
+
+\begin{equation}
+P_{BAR} = P/{\mathbin{\color{red}E}}
+\label{eqn:PressureBar}
+\end{equation}
+
+This provides us with a first order conversion, to improve accuracy we must use a second order compensation for temperature and pressure. This is done using Eqn. \ref{eqn:T2}, Eqn. \ref{eqn:OFF2}, and Eqn. \ref{eqn:SENS2}.
+We introduce the coefficients $\mathbin{\color{red}F, G, H, I, J, K, L, M, O, P}$
+\begin{equation}
+T2 = 
+\begin{cases}
+{\mathbin{\color{red}N}} \times dT^2 / 2^{\mathbin{\color{red}O}}  & TEMP > 20Deg \\
+{\mathbin{\color{red}F}} \times dT^2 / 2^{\mathbin{\color{red}G}} &  TEMP < 20 Deg 
+\label{eqn:T2}
+\end{cases}
+\end{equation}
+
+\begin{equation}
+OFF2 = 
+\begin{cases}
+ {\mathbin{\color{red}P}} (TEMP - 2000)^2 / 2^ 4 & TEMP > 20Deg \\
+ {\mathbin{\color{red}H}} (TEMP - 2000)^2 / 2^ {\mathbin{\color{red}I}} & TEMP < 20Deg \\
+ {\mathbin{\color{red}H}} (TEMP - 2000)^2 / 2^ {\mathbin{\color{red}I}} + {\mathbin{\color{red}L}} (TEMP + 1500)^2 & TEMP < -15Deg 
+\label{eqn:OFF2}
+\end{cases}
+\end{equation}
+
+\begin{equation}
+SENS2 = 
+\begin{cases}
+ {\mathbin{\color{red}H}} (TEMP - 2000)^2 / 2^ {\mathbin{\color{red}I}} - {\mathbin{\color{red}M}} (TEMP - 4500)^2 & TEMP > 45 Deg \ \text{\footnote{Only for BA01 Model!}} \\
+ 0 & TEMP > 20Deg \\
+ {\mathbin{\color{red}J}} (TEMP - 2000)^2 / 2^ {\mathbin{\color{red}K}} & TEMP < 20Deg \\
+ {\mathbin{\color{red}H}} (TEMP - 2000)^2 / 2^ {\mathbin{\color{red}I}} + {\mathbin{\color{red}M}} (TEMP + 1500)^2 & TEMP < -15Deg
+\label{eqn:SENS2}
+\end{cases}
+\end{equation}
+
+\footnotetext{NOTE: Only for BA01 Model! For all others, discount this range and let $SENS2 = 0$ for $TEMP > 20 Deg$}
+
+\newpage
+The coefficients used in these equations are shown in detail for all avaliable MS5803 sensor models in Table. \ref{tab:Coef}
+
+\begin{table}[!h]
+\centering
+
+
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+Coef \textbackslash Sensor & BA01 & BA02 & BA05 & BA07 & BA14 & BA30 \\ \hline
+A           & 16   & 17   & 18   & 18   & 16   & 16   \\ \hline
+B           & 7    & 6    & 5    & 5    & 7    & 7    \\ \hline
+C           & 15   & 16   & 17   & 17   & 15   & 15   \\ \hline
+D           & 8    & 7    & 7    & 6    & 8    & 8    \\ \hline
+E           & 100  & 100  & 90.9 & 25   & 10   & 10   \\ \hline
+F           & 1    & 1    & 3    & 3    & 3    & 3    \\ \hline
+G           & 31   & 31   & 33   & 33   & 33   & 33   \\ \hline
+H           & 3    & 61   & 3    & 3    & 3    & 3    \\ \hline
+I           & 0    & 4    & 3    & 3    & 1    & 1    \\ \hline
+J           & 7    & 2    & 7    & 7    & 5    & 5    \\ \hline
+K           & 0    & 0    & 3    & 3    & 3    & 7    \\ \hline
+L           & 0    & 20   & 0    & 0    & 7    & 7    \\ \hline
+M           & 2    & 12   & 3    & 3    & 4    & 4    \\ \hline
+N           & 0    & 0    & 0    & 0    & 7    & 7    \\ \hline
+O           & 0    & 0    & 0    & 0    & 37   & 37   \\ \hline
+P           & 0    & 0    & 0    & 0    & 1    & 1    \\ \hline
+\end{tabular}
+
+\caption{This table contains the coefficients to be used for all models of the MS5803}
+\label{tab:Coef}
+\end{table}
+
+
+\vspace*{\fill}
+\begin{center}
+\textit{This work was assembled by those at Northern Widget LLC}
+\end{center}
+
+\end{document}
