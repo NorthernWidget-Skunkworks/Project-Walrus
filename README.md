@@ -91,6 +91,8 @@ There are four major ways to reflow:
 3. You can also use a simple electrical skillet -- the kind that you might use to make some food. https://www.sparkfun.com/tutorials/59
 4. Using a hot-air rework station; this is a bit time-intensive, but lets you control the heat, and I often use it for small boards. https://learn.sparkfun.com/tutorials/how-to-use-a-hot-air-rework-station/all
 
+After reflowing, you may need to clean up jumped connections using **solder wick**.
+
 ### Debugging circuit boards
 
 After reflow is complete, check if everything worked. Do you have any jumped connections? Any remaining solder paste that hasn't been reflowed? This can be the trickiest part, and one for which access to a multimeter is essential. An oscilloscope and a digital logical analyzer can help too. Debugging electronic circuit boards is a process that requires significant skill and practice, so be sure that you can work with someone with some expertise. I would suggest an electrical engineering student or professor at a local university.
@@ -122,6 +124,14 @@ For RS-485 Mode:
 
 
 ## Upload the firmware
+
+To install firmware on the Walrus, you use the 2x3-pin 6-pin ICSP (also called ISP) header with a special device called an "in-circuit system programmer" (or just "in-system programmer; yup, that's what the acronym stands for).
+
+Many devices exist to upload a bootloader including:
+* The official [AVR ISP mkII](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf) (no longer produced but available used)
+* Using an [Arduino as an ISP](https://www.arduino.cc/en/tutorial/arduinoISP)
+* The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
+* The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
 
 Using an AVR ISP, upload the following firmware programs from the "Firmware" directory in this repository using the Arduino software:
 * Large form factor PTH board, I2C mode: `Longbow_2BA_0x6B`
@@ -197,4 +207,3 @@ Once this is done, you can deploy your sensor in the river, lake, or atmosphere 
 
 <br>
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-
