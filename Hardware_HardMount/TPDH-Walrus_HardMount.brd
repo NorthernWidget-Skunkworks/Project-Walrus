@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.6.1">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -9,7 +9,7 @@
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.1" altunitdist="mm" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -29,14 +29,14 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -47,19 +47,19 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
-<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
@@ -180,29 +180,6 @@ Northern Widget LLC
 and University of Minnesota</text>
 </plain>
 <libraries>
-<library name="MS5803">
-<packages>
-<package name="MS5803">
-<smd name="1" x="-2.675" y="1.9" dx="0.9" dy="2.25" layer="1" rot="R90"/>
-<smd name="2" x="-2.675" y="0.65" dx="0.9" dy="2.25" layer="1" rot="R90"/>
-<smd name="3" x="-2.4" y="-0.65" dx="0.9" dy="2.8" layer="1" rot="R90"/>
-<smd name="4" x="-2.675" y="-1.9" dx="0.9" dy="2.25" layer="1" rot="R90"/>
-<smd name="5" x="2.675" y="-1.9" dx="0.9" dy="2.25" layer="1" rot="R90"/>
-<smd name="6" x="2.675" y="-0.65" dx="0.9" dy="2.25" layer="1" rot="R90"/>
-<smd name="7" x="2.675" y="0.65" dx="0.9" dy="2.25" layer="1" rot="R90"/>
-<smd name="8" x="2.675" y="1.9" dx="0.9" dy="2.25" layer="1" rot="R90"/>
-<circle x="-0.889" y="1.905" radius="0.127" width="0.8128" layer="21"/>
-<wire x1="-3.2" y1="3.1" x2="3.2" y2="3.1" width="0.3048" layer="21"/>
-<wire x1="3.2" y1="-3.1" x2="-3.2" y2="-3.1" width="0.3048" layer="21"/>
-<wire x1="-3.2" y1="-3.1" x2="-3.2" y2="-2.6" width="0.3048" layer="21"/>
-<wire x1="3.2" y1="-3.1" x2="3.2" y2="-2.6" width="0.3048" layer="21"/>
-<wire x1="3.2" y1="3.1" x2="3.2" y2="2.6" width="0.3048" layer="21"/>
-<wire x1="-3.2" y1="3.1" x2="-3.2" y2="2.6" width="0.3048" layer="21"/>
-<text x="-3.302" y="3.556" size="0.8128" layer="25" font="vector" ratio="15">&gt;NAME</text>
-<text x="-3.048" y="-4.318" size="0.8128" layer="25" font="vector" ratio="15">&gt;VALUE</text>
-</package>
-</packages>
-</library>
 <library name="bschulz">
 <packages>
 <package name="POGO_PAD">
@@ -217,8 +194,8 @@ and University of Minnesota</text>
 <smd name="1" x="-0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
 <smd name="2" x="0.95" y="-1" dx="0.8" dy="0.9" layer="1"/>
 <smd name="3" x="0" y="1.1" dx="0.8" dy="0.9" layer="1"/>
-<text x="-1.651" y="0" size="0.6096" layer="25" font="vector" ratio="20" rot="R90" align="bottom-center">&gt;NAME</text>
-<text x="1.651" y="0" size="0.6096" layer="27" font="vector" ratio="20" rot="R90" align="top-center">&gt;VALUE</text>
+<text x="-1.651" y="0" size="0.6096" layer="25" font="vector" ratio="15" rot="R90" align="bottom-center">&gt;NAME</text>
+<text x="1.651" y="0" size="0.6096" layer="27" font="vector" ratio="15" rot="R90" align="top-center">&gt;VALUE</text>
 </package>
 <package name="2_56">
 <description>&lt;p&gt;&lt;b&gt;2x56 Non-Plated Mounting Hole &lt;/b&gt;
@@ -256,7 +233,7 @@ and University of Minnesota</text>
 <pad name="1" x="-1.27" y="2.54" drill="1.02" diameter="1.6256"/>
 <pad name="5" x="-1.27" y="-2.54" drill="1.02" diameter="1.6256"/>
 <pad name="6" x="1.27" y="-2.54" drill="1.02" diameter="1.6256"/>
-<text x="-3.048" y="-3.048" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="-3.048" y="0" size="0.6096" layer="25" font="vector" ratio="15" rot="R90" align="center">&gt;NAME</text>
 <text x="-3.048" y="3.556" size="0.8128" layer="21" font="vector" ratio="20">1</text>
 </package>
 <package name="QFN20">
@@ -444,7 +421,78 @@ Ref &lt;a href = http://www.ti.com/lit/ds/symlink/lp3988-q1.pdf&gt;datasheet&lt;
 <rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
 <rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
 </package>
+<package name="MS5803">
+<circle x="-0.889" y="1.905" radius="0.127" width="0.8128" layer="21"/>
+<wire x1="-3.2" y1="3.1" x2="3.2" y2="3.1" width="0.3048" layer="21"/>
+<wire x1="3.2" y1="-3.1" x2="-3.2" y2="-3.1" width="0.3048" layer="21"/>
+<wire x1="-3.2" y1="-3.1" x2="-3.2" y2="-2.6" width="0.3048" layer="21"/>
+<wire x1="3.2" y1="-3.1" x2="3.2" y2="-2.6" width="0.3048" layer="21"/>
+<wire x1="3.2" y1="3.1" x2="3.2" y2="2.6" width="0.3048" layer="21"/>
+<wire x1="-3.2" y1="3.1" x2="-3.2" y2="2.6" width="0.3048" layer="21"/>
+<smd name="1" x="-2.675" y="1.9" dx="0.9" dy="2.25" layer="1" rot="R90"/>
+<smd name="2" x="-2.675" y="0.65" dx="0.9" dy="2.25" layer="1" rot="R90"/>
+<smd name="3" x="-2.4" y="-0.65" dx="0.9" dy="2.8" layer="1" rot="R90"/>
+<smd name="4" x="-2.675" y="-1.9" dx="0.9" dy="2.25" layer="1" rot="R90"/>
+<smd name="5" x="2.675" y="-1.9" dx="0.9" dy="2.25" layer="1" rot="R90"/>
+<smd name="6" x="2.675" y="-0.65" dx="0.9" dy="2.25" layer="1" rot="R90"/>
+<smd name="7" x="2.675" y="0.65" dx="0.9" dy="2.25" layer="1" rot="R90"/>
+<smd name="8" x="2.675" y="1.9" dx="0.9" dy="2.25" layer="1" rot="R90"/>
+<text x="-3.302" y="3.556" size="0.8128" layer="25" font="vector" ratio="15">&gt;NAME</text>
+<text x="-3.048" y="-4.318" size="0.8128" layer="27" font="vector" ratio="15">&gt;VALUE</text>
+</package>
+<package name="OSHW-LOGO-M" urn="urn:adsk.eagle:footprint:37012/1" locally_modified="yes">
+<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo - Medium - Silkscreen&lt;/h3&gt;
+&lt;p&gt;Silkscreen logo for open-source hardware designs.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;OSHW_LOGO&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
+<polygon width="0.0762" layer="51">
+<vertex x="0.6578" y="-1.588" curve="9.499253"/>
+<vertex x="0.9108" y="-1.4576"/>
+<vertex x="1.5392" y="-1.97"/>
+<vertex x="1.97" y="-1.5392"/>
+<vertex x="1.4576" y="-0.9108" curve="19.001165"/>
+<vertex x="1.6747" y="-0.3866"/>
+<vertex x="2.4814" y="-0.3047"/>
+<vertex x="2.4814" y="0.3047"/>
+<vertex x="1.6747" y="0.3866" curve="19.001165"/>
+<vertex x="1.4576" y="0.9108"/>
+<vertex x="1.97" y="1.5392"/>
+<vertex x="1.5392" y="1.97"/>
+<vertex x="0.9108" y="1.4576" curve="19.001165"/>
+<vertex x="0.3866" y="1.6747"/>
+<vertex x="0.3047" y="2.4814"/>
+<vertex x="-0.3047" y="2.4814"/>
+<vertex x="-0.3866" y="1.6747" curve="19.001165"/>
+<vertex x="-0.9108" y="1.4576"/>
+<vertex x="-1.5392" y="1.97"/>
+<vertex x="-1.97" y="1.5392"/>
+<vertex x="-1.4576" y="0.9108" curve="19.001165"/>
+<vertex x="-1.6747" y="0.3866"/>
+<vertex x="-2.4814" y="0.3047"/>
+<vertex x="-2.4814" y="-0.3047"/>
+<vertex x="-1.6747" y="-0.3866" curve="19.001165"/>
+<vertex x="-1.4576" y="-0.9108"/>
+<vertex x="-1.97" y="-1.5392"/>
+<vertex x="-1.5392" y="-1.97"/>
+<vertex x="-0.9108" y="-1.4576" curve="9.499253"/>
+<vertex x="-0.6578" y="-1.588"/>
+<vertex x="-0.299" y="-0.7218" curve="-67.507353"/>
+<vertex x="-0.7813" y="0" curve="-247.497552"/>
+<vertex x="0.299" y="-0.7218"/>
+</polygon>
+</package>
 </packages>
+<packages3d>
+<package3d name="OSHW-LOGO-M" urn="urn:adsk.eagle:package:37126/1" locally_modified="yes" type="box">
+<description>Open-Source Hardware (OSHW) Logo - Medium - Silkscreen
+Silkscreen logo for open-source hardware designs.
+Devices using:
+OSHW_LOGO</description>
+<packageinstances>
+<packageinstance name="OSHW-LOGO-M"/>
+</packageinstances>
+</package3d>
+</packages3d>
 </library>
 <library name="bschulz_passives">
 <packages>
@@ -495,64 +543,6 @@ Ref &lt;a href = http://www.ti.com/lit/ds/symlink/lp3988-q1.pdf&gt;datasheet&lt;
 <rectangle x1="-0.554" y1="-0.3048" x2="-0.254" y2="0.2951" layer="21"/>
 <rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.2951" layer="21"/>
 <rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
-</package>
-</packages>
-</library>
-<library name="SparkFun-Aesthetics">
-<description>&lt;h3&gt;SparkFun Aesthetics&lt;/h3&gt;
-This library contiains non-functional items such as logos, build/ordering notes, frame blocks, etc. 
-&lt;br&gt;
-&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
-&lt;br&gt;
-&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
-&lt;br&gt;
-&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;
-&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="OSHW-LOGO-M">
-<description>&lt;h3&gt;Open-Source Hardware (OSHW) Logo - Medium - Silkscreen&lt;/h3&gt;
-&lt;p&gt;Silkscreen logo for open-source hardware designs.&lt;/p&gt;
-&lt;p&gt;Devices using:
-&lt;ul&gt;&lt;li&gt;OSHW_LOGO&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
-<polygon width="0.0762" layer="21">
-<vertex x="0.6578" y="-1.588" curve="9.499253"/>
-<vertex x="0.9108" y="-1.4576"/>
-<vertex x="1.5392" y="-1.97"/>
-<vertex x="1.97" y="-1.5392"/>
-<vertex x="1.4576" y="-0.9108" curve="19.001165"/>
-<vertex x="1.6747" y="-0.3866"/>
-<vertex x="2.4814" y="-0.3047"/>
-<vertex x="2.4814" y="0.3047"/>
-<vertex x="1.6747" y="0.3866" curve="19.001165"/>
-<vertex x="1.4576" y="0.9108"/>
-<vertex x="1.97" y="1.5392"/>
-<vertex x="1.5392" y="1.97"/>
-<vertex x="0.9108" y="1.4576" curve="19.001165"/>
-<vertex x="0.3866" y="1.6747"/>
-<vertex x="0.3047" y="2.4814"/>
-<vertex x="-0.3047" y="2.4814"/>
-<vertex x="-0.3866" y="1.6747" curve="19.001165"/>
-<vertex x="-0.9108" y="1.4576"/>
-<vertex x="-1.5392" y="1.97"/>
-<vertex x="-1.97" y="1.5392"/>
-<vertex x="-1.4576" y="0.9108" curve="19.001165"/>
-<vertex x="-1.6747" y="0.3866"/>
-<vertex x="-2.4814" y="0.3047"/>
-<vertex x="-2.4814" y="-0.3047"/>
-<vertex x="-1.6747" y="-0.3866" curve="19.001165"/>
-<vertex x="-1.4576" y="-0.9108"/>
-<vertex x="-1.97" y="-1.5392"/>
-<vertex x="-1.5392" y="-1.97"/>
-<vertex x="-0.9108" y="-1.4576" curve="9.499253"/>
-<vertex x="-0.6578" y="-1.588"/>
-<vertex x="-0.299" y="-0.7218" curve="-67.507353"/>
-<vertex x="-0.7813" y="0" curve="-247.497552"/>
-<vertex x="0.299" y="-0.7218"/>
-</polygon>
 </package>
 </packages>
 </library>
@@ -745,12 +735,12 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 </pass>
 </autorouter>
 <elements>
-<element name="U1" library="MS5803" package="MS5803" value="MS5803-14BA" x="6.35" y="24.2095" smashed="yes">
-<attribute name="DIGIKEY" value="223-1625-5-ND" x="6.35" y="24.2095" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="TE" x="6.35" y="24.2095" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="MS580305BA01-00" x="6.35" y="24.2095" size="1.778" layer="27" display="off"/>
+<element name="U1" library="bschulz" package="MS5803" value="MS580302BA" x="6.35" y="24.2095" smashed="yes">
+<attribute name="DIGIKEY" value="223-1624-5-ND" x="6.35" y="24.2095" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="TE Connectivity" x="6.35" y="24.2095" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="MS580302BA01-00" x="6.35" y="24.2095" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="3.048" y="27.7655" size="0.8128" layer="25" font="vector" ratio="15"/>
-<attribute name="PROD_ID" value="IC-12111" x="25.4" y="19.1295" size="1.778" layer="27" display="off"/>
+<attribute name="PROD_ID" value="" x="25.4" y="19.1295" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C1" library="bschulz_passives" package="C0402" value="0.1uF" x="5.919" y="11.392" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="490-4759-1-ND" x="5.919" y="11.392" size="1.778" layer="27" rot="R270" display="off"/>
@@ -760,14 +750,18 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="4.903" y="11.392" size="0.6096" layer="27" font="vector" ratio="15" rot="R270" align="center"/>
 </element>
 <element name="R5" library="bschulz_passives" package="R0402" value="10k" x="10.8934" y="34.492" smashed="yes" rot="R270">
-<attribute name="DIGIKEY" value="311-10.0KHRCT-ND" x="10.8934" y="34.492" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DIGIKEY" value="311-10.0KLRCT-ND" x="10.8934" y="34.492" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="Yageo" x="10.8934" y="34.492" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MPN" value="RC0603FR-0710KL" x="10.8934" y="34.492" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="RC0402FR-0710KL" x="10.8934" y="34.492" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="11.7094" y="34.492" size="0.6096" layer="25" font="vector" ratio="15" rot="R270" align="center"/>
 <attribute name="VALUE" x="9.8774" y="34.492" size="0.6096" layer="27" font="vector" ratio="15" rot="R270" align="center"/>
 <attribute name="VALUE_PART" value="10k" x="10.8934" y="34.492" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="U$12" library="bschulz" package="POGO_PAD" value="POGO_PAD" x="7.177" y="18.935" smashed="yes"/>
+<element name="U$12" library="bschulz" package="POGO_PAD" value="POGO_PAD" x="7.177" y="18.935" smashed="yes">
+<attribute name="DIGIKEY" value="DNP" x="7.177" y="18.935" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="N/A" x="7.177" y="18.935" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="DNP" x="7.177" y="18.935" size="1.778" layer="27" display="off"/>
+</element>
 <element name="R6" library="bschulz_passives" package="R0402" value="100" x="5.919" y="8.314" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="311-100LRCT-ND" x="5.919" y="8.314" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="Yageo" x="5.919" y="8.314" size="1.778" layer="27" rot="R270" display="off"/>
@@ -797,7 +791,11 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="2.686" y="9.9" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="1.9" y="8.284" size="0.6096" layer="27" font="vector" ratio="20" align="top-center"/>
 </element>
-<element name="H1" library="bschulz" package="2_56" value="" x="6.35" y="39.5" smashed="yes"/>
+<element name="H1" library="bschulz" package="2_56" value="" x="6.35" y="39.5" smashed="yes">
+<attribute name="DIGIKEY" value="DNP" x="6.35" y="39.5" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="N/A" x="6.35" y="39.5" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="DNP" x="6.35" y="39.5" size="1.778" layer="27" display="off"/>
+</element>
 <element name="ISP1" library="bschulz" package="AVRISP" value="AVRISP-6" x="6.35" y="34.492" smashed="yes" rot="R270"/>
 <element name="U3" library="bschulz" package="QFN20" value="" x="9.31" y="16.187" smashed="yes" rot="R180">
 <attribute name="DIGIKEY" value="ATTINY1634-MURCT-ND" x="9.31" y="16.187" size="1.778" layer="27" rot="R180" display="off"/>
@@ -806,17 +804,17 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="9.31" y="15.066" size="0.6096" layer="25" font="vector" ratio="15" rot="R180" align="center"/>
 </element>
 <element name="R4" library="bschulz_passives" package="R0402" value="10k" x="2.033" y="2.327" smashed="yes">
-<attribute name="DIGIKEY" value="311-10.0KHRCT-ND" x="-0.634" y="2.327" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY" value="311-10.0KLRCT-ND" x="-0.634" y="2.327" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="Yageo" x="-0.634" y="2.327" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="RC0603FR-0710KL" x="-0.634" y="2.327" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="RC0402FR-0710KL" x="-0.634" y="2.327" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="0.833" y="2.343" size="0.6096" layer="25" font="vector" ratio="15" align="center"/>
 <attribute name="VALUE" x="2.033" y="1.311" size="0.6096" layer="27" font="vector" ratio="15" align="center"/>
 <attribute name="VALUE_PART" value="10k" x="-0.634" y="2.327" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R8" library="bschulz_passives" package="R0402" value="10k" x="2.033" y="1.184" smashed="yes">
-<attribute name="DIGIKEY" value="311-10.0KHRCT-ND" x="2.414" y="1.184" size="1.778" layer="27" display="off"/>
+<attribute name="DIGIKEY" value="311-10.0KLRCT-ND" x="2.414" y="1.184" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="Yageo" x="2.414" y="1.184" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="RC0603FR-0710KL" x="2.414" y="1.184" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="RC0402FR-0710KL" x="2.414" y="1.184" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="0.833" y="1.1" size="0.6096" layer="25" font="vector" ratio="15" align="center"/>
 <attribute name="VALUE" x="2.033" y="0.168" size="0.6096" layer="27" font="vector" ratio="15" align="center"/>
 <attribute name="VALUE_PART" value="10k" x="2.414" y="1.184" size="1.778" layer="27" display="off"/>
@@ -856,7 +854,11 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="4.639" y="19.3878" size="0.6096" layer="25" font="vector" ratio="15" rot="R180" align="center"/>
 <attribute name="VALUE" x="4.512" y="21.0928" size="0.6096" layer="27" font="vector" ratio="15" rot="R180" align="center"/>
 </element>
-<element name="LOGO1" library="SparkFun-Aesthetics" package="OSHW-LOGO-M" value="OSHW-LOGOM" x="10" y="30" smashed="yes" rot="MR0"/>
+<element name="LOGO1" library="bschulz" package="OSHW-LOGO-M" package3d_urn="urn:adsk.eagle:package:37126/1" value="OSHW-LOGOM" x="10" y="30" smashed="yes" rot="MR0">
+<attribute name="DIGIKEY" value="DNP" x="10" y="30" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="MF" value="N/A" x="10" y="30" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="MPN" value="DNP" x="10" y="30" size="1.778" layer="28" rot="MR0" display="off"/>
+</element>
 <element name="D1" library="bschulz" package="LED_0603" value="LEDBLUE0603" x="5.3" y="13.5" smashed="yes">
 <attribute name="DIGIKEY" value="732-4966-1-ND" x="5.3" y="13.5" size="0.6096" layer="27" font="vector" ratio="15" display="off"/>
 <attribute name="MF" value="Wurth" x="5.3" y="13.5" size="0.6096" layer="27" font="vector" ratio="15" display="off"/>
@@ -870,7 +872,11 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="5.4" y="16.016" size="0.6096" layer="27" font="vector" ratio="15" rot="R180" align="center"/>
 <attribute name="VALUE_PART" value="1k" x="5.4" y="15" size="0.6096" layer="27" font="vector" ratio="15" rot="R180" display="off"/>
 </element>
-<element name="U$1" library="bschulz" package="SOLDERCUP_CONN_QUAD" value="SOLDERCUP_CONN_QUAD" x="6.35" y="0.4" smashed="yes"/>
+<element name="U$1" library="bschulz" package="SOLDERCUP_CONN_QUAD" value="SOLDERCUP_CONN_QUAD" x="6.35" y="0.4" smashed="yes">
+<attribute name="DIGIKEY" value="A97650-ND" x="6.35" y="0.4" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="TE Connectivity" x="6.35" y="0.4" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="1838893-2" x="6.35" y="0.4" size="1.778" layer="27" display="off"/>
+</element>
 <element name="U8" library="bschulz" package="WQFN10" value="NS5A4684S" x="4.4" y="8.6" smashed="yes" rot="R180">
 <attribute name="DIGIKEY" value="NS5A4684SMNTAGOSCT-ND" x="4.4" y="8.6" size="0.6096" layer="27" font="vector" ratio="15" rot="R180" display="off"/>
 <attribute name="DISP" value="NS5A4684" x="4.4" y="8.6" size="1.778" layer="27" rot="R180" display="off"/>
@@ -913,17 +919,17 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="NAME" x="4.332" y="14.7" size="0.6096" layer="25" font="vector" ratio="15" rot="R90" align="center"/>
 </element>
 <element name="R2" library="bschulz_passives" package="R0402" value="10k" x="10.2" y="30.1" smashed="yes" rot="R90">
-<attribute name="DIGIKEY" value="311-10.0KHRCT-ND" x="10.2" y="30.1" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="DIGIKEY" value="311-10.0KLRCT-ND" x="10.2" y="30.1" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MF" value="Yageo" x="10.2" y="30.1" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="RC0603FR-0710KL" x="10.2" y="30.1" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="RC0402FR-0710KL" x="10.2" y="30.1" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="9.184" y="30.1" size="0.6096" layer="25" font="vector" ratio="15" rot="R90" align="center"/>
 <attribute name="VALUE" x="11.216" y="30.1" size="0.6096" layer="27" font="vector" ratio="15" rot="R90" align="center"/>
 <attribute name="VALUE_PART" value="10k" x="10.2" y="30.1" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="R3" library="bschulz_passives" package="R0402" value="10k" x="11.3" y="29.4" smashed="yes" rot="R90">
-<attribute name="DIGIKEY" value="311-10.0KHRCT-ND" x="11.3" y="29.4" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="DIGIKEY" value="311-10.0KLRCT-ND" x="11.3" y="29.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MF" value="Yageo" x="11.3" y="29.4" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="RC0603FR-0710KL" x="11.3" y="29.4" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="RC0402FR-0710KL" x="11.3" y="29.4" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="10.284" y="29.4" size="0.6096" layer="25" font="vector" ratio="15" rot="R90" align="center"/>
 <attribute name="VALUE" x="12.316" y="29.4" size="0.6096" layer="27" font="vector" ratio="15" rot="R90" align="center"/>
 <attribute name="VALUE_PART" value="10k" x="11.3" y="29.4" size="1.778" layer="27" rot="R90" display="off"/>
@@ -1605,6 +1611,16 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <note version="6.3" minversion="6.2.2" severity="warning">
 Since Version 6.2.2 text objects can contain more than one line,
 which will not be processed correctly with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
 </note>
 </compatibility>
 </eagle>
