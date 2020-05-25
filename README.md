@@ -100,7 +100,7 @@ After reflow is complete, check if everything worked. Do you have any jumped con
 
 ## Wiring and pinout
 
-"Pin" is the name of the pin as labeled on the board. "Wire" is the color of the AlphaWire cable that we use; you may use something different based on what manufacturers exist where you are; that's okay, just record the color convention! (We sometimes use another cable in which we use a white wire for SDA and a green wire for SCL, but have found that AlphaWire brand works best.)
+"Pin" is the name of the pin as labeled on the board. "Wire" is the color of the [Alpha Wire 5004C cable](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976) that we use; you may use something different based on what manufacturers exist where you are; that's okay, just record the color convention! (We sometimes use another cable in which we use a white wire for SDA and a green wire for SCL, but have found that Alpha Wire brand works best.)
 
 >> Add image of cable ends (optional) and find how to integrate with housing section; cabling is a distinct topic, but the step of attaching the cable lies within the housing-construction step <<
 
@@ -119,8 +119,8 @@ For RS-485 Mode:
 |-----|------|------|
 |V+|Red|Vcc|		
 |V-|Black|GND|
-|SIG1|Brown|A|
-|SIG2|Orange|B|
+|SIG1|Brown|A (RX+, TX+)|
+|SIG2|Orange|B (RX-, TX-)|
 
 
 ## Upload the firmware
@@ -136,7 +136,6 @@ Many devices exist to upload a bootloader including:
 Using an AVR ISP, upload the following firmware programs from the "Firmware" directory in this repository using the Arduino software:
 * Large form factor PTH board, I2C mode: `Longbow_2BA_0x6B`
 * Small form factor hard-mount board: `Longbow_2BA_0x6B_HalfDuplex`
->> @bschulz1701: check if this is correct <<
 
 >> Link to resource for general Arduino install and upload, as well as for bootloading and AVR ISP, perhaps in Resnik repo, or in a more general Wiki <<
 
@@ -181,28 +180,52 @@ After creating the housing, pot the boards in 2-part epoxy. MAKE SURE that a cab
 
 ### Wiring to logger
 
-Pass the cable through the housing to the logger, ideally using a cable gland that you can tighten. Attach:
-* V- to GND or V-
-* V+ to a positive voltage source between 3.3 and 5 V
+Pass the cable through the housing to the logger, ideally using a cable gland that you can tighten. Follow the table in the [Wiring and pinout](#Wiring-and-pinout) section to attach individual wires to the appropriate pins on the data logger and (if needed) RS-485 converter. In bulleted-list form, with colors given for [Alpha Wire 5004C](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976):
 
-If using the sensor in I2C mode, simply attach:
-* SIG1 to SDA
-* SIG2 to SCL
+### Power
 
-If using the sensor in RS-485 mode, attach the components as follows:
->> @bschulz1701: which is A and B in terms Rx/Tx +/- on the Longbow? <<
+**In all cases, attach power wires to pins as follows:**
+* V- to GND or V- (**black**)
+* V+ to a positive voltage source between 3.3 and 5 V (**red**)
 
-Then use another set of four wires to connect the Longbow to the logger:
+#### Data
+
+##### I2C
+
+**If using the sensor in I2C mode, attach the signal wires as follows:**
+* SIG1 to SDA (**brown**)
+* SIG2 to SCL (**orange**)
+
+##### RS-485
+
+**If using the sensor in RS-485 mode, attach the signal wires to the Longbow Backpack as follows**:
+* SIG1 to A (+) (**brown**)
+* SIG2 to B (-) (**orange**)
+(You may use another RS-485 converter, in which case the wiring is up to you!)
+
+**Then use another set of four wires to connect the Longbow to the logger:**
 * GND to GND
 * Vin to a 3.3 to 5 V power source
 * SDA to SDA
 * SCL to SCL
-
-Ensure that the cable is appropriately strain relieved.
+We recommend [Pololu's pre-crimped wires](https://www.pololu.com/category/71/wires-with-pre-crimped-terminals) for this with a male terminal, as it ensures that you can have these four wires in the proper order for both the Walrus and the data logger. For this reason, Northern Widget data loggers always have these four pins in the order:
+* GND
+* V+
+* SDA
+* SCL
 
 >> Link to Margay / Resnik for more information on building logger housing <<
 
-Once this is done, you can deploy your sensor in the river, lake, or atmosphere that you hope to measure. Remember that you must correct all pressure measuremennts for barometric pressure in order to recover a water level. If the water is saline or heavily sediment laden, you must know the salinity or sediment-adjusted density as well.
+## Deployment
+
+Pre-deployment check:
+* Ensure that the cable is appropriately strain relieved on the logger end (the screw plug or epoxy, depending on model, handles this on the sensor end).
+* Check cable for nicks or tears; replace if needed.
+* Ensure that the unit functions properly and gives good readings in the lab
+* Check that you have programmed the desired reading duration
+* Ensure that the transducer for your Walrus functions over the desired pressure range
+
+Once you are ready, you can deploy your sensor in the river, lake, or atmosphere that you hope to measure. Remember that you must correct all pressure measuremennts for barometric pressure in order to recover a water level. If the water is saline or heavily sediment laden, you must know the salinity or sediment-adjusted density as well.
 
 
 <br>
