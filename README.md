@@ -151,16 +151,19 @@ Using an AVR ISP, upload the following firmware programs from the "Firmware" dir
 
 #### Materials and components required
 
-* 3D printer filament [type?]
-* 4-conductor cable [diameter/type?]
-* Two-part epoxy [information here?]
-* Screws [3/size?]
+* 3D printer filament **[type?]**
+* 4-conductor cable with a screw-cap sealing plug: we recommend the [Alpha Wire AR0400105-SL357](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497)
+* [4-pin hard mount plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165)
+* Two-part epoxy **[information here?]**
+* 3x [\#4 self-tapping screws](https://www.polycase.com/screws-mbr-100)
+
+>> @bschulz1701: fill in missing information
 
 #### 3D printing the housing
 
 Subfolders of the "3Dprint" directory contain "STL" files that you can use with a program called "[Slic3r](https://slic3r.org/)" to create 3-D printable parts for your housing. Assuming that you have a Prusa 3D printer, you will want to download the [Prusa variant of Slic3r](https://www.prusa3d.com/prusaslicer/). This comes with the appropriate setup files and information to help you configure the printer and print your parts.
 
->> TO DO: Options for Hard Mount with and without the plug. Also: part number for plug. <<
+>> TO DO: Options for Hard Mount with and without the plug. <<
 
 #### Cabling
 
@@ -168,19 +171,18 @@ Subfolders of the "3Dprint" directory contain "STL" files that you can use with 
 
 >> EXAMPLES WITH PTH AND HARDMOUNT, OR JUST HARDMOUNT? <<
 
+>> First, attach hard-mount plug. Then, attach cable. Or just solder cable on. <<
+
+
 #### Potting
 
 After creating the housing, pot the boards in 2-part epoxy. MAKE SURE that a cable of the desired length is attached beforehand! Be careful to fully cover everything except for the white inside membrane on the pressure transducer. If epoxy touches this, the board is likely rendered useless.
 
->> Parts list, incl. screws, filament, 3D printer info, etc. <<
 >> Walk through assembly with images <<
->> Should I get a Prusa printer for home, or... <<
 
-## Deployment
+## Wiring to logger
 
-### Wiring to logger
-
-Pass the cable through the housing to the logger, ideally using a cable gland that you can tighten. Follow the table in the [Wiring and pinout](#Wiring-and-pinout) section to attach individual wires to the appropriate pins on the data logger and (if needed) RS-485 converter. In bulleted-list form, with colors given for [Alpha Wire 5004C](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976):
+Pass the cable through the housing to the logger, ideally using a cable gland that you can tighten on the box containing the logger: this can provide waterproofing as well as some strain relief. Follow the table in the [Wiring and pinout](#Wiring-and-pinout) section to attach individual wires to the appropriate pins on the data logger and (if needed) RS-485 converter. In bulleted-list form, with colors given for [Alpha Wire 5004C](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976):
 
 ### Power
 
@@ -188,15 +190,15 @@ Pass the cable through the housing to the logger, ideally using a cable gland th
 * V- to GND or V- (**black**)
 * V+ to a positive voltage source between 3.3 and 5 V (**red**)
 
-#### Data
+### Data
 
-##### I2C
+#### I2C
 
 **If using the sensor in I2C mode, attach the signal wires as follows:**
 * SIG1 to SDA (**brown**)
 * SIG2 to SCL (**orange**)
 
-##### RS-485
+#### RS-485
 
 **If using the sensor in RS-485 mode, attach the signal wires to the Longbow Backpack as follows**:
 * SIG1 to A (+) (**brown**)
@@ -213,8 +215,6 @@ We recommend [Pololu's pre-crimped wires](https://www.pololu.com/category/71/wir
 * V+
 * SDA
 * SCL
-
->> Link to Margay / Resnik for more information on building logger housing <<
 
 ## Deployment
 
