@@ -133,7 +133,7 @@ Go to https://www.arduino.cc/en/main/software. Choose the proper IDE version for
 
 To install firmware on the Walrus, you use the [2x3-pin ICSP (also called ISP) header](https://www.digikey.com/product-detail/en/3m/929665-09-03-I/3M156313-06-ND/681796) with a special device called an "in-circuit system programmer" (or just "in-system programmer; yup, that's what the acronym stands for).
 
-Many devices exist to upload a bootloader including:
+Many devices exist to upload firmware, including:
 * The official [AVR ISP mkII](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42093-AVR-ISP-mkII_UserGuide.pdf) (no longer produced but available used)
 * Using an [Arduino as an ISP](https://www.arduino.cc/en/tutorial/arduinoISP)
 * The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
@@ -143,10 +143,10 @@ Many devices exist to upload a bootloader including:
 
 Using an AVR ISP, upload the proper firmware programs from the ["Firmware" directory](Firmware) in this repository using the Arduino software:
 * Large form factor PTH board
-  * I2C mode: No firmware required. Library communicates directly with sensors via their built-in I2C addresses.
+  * I2C mode: No firmware required. Library communicates directly with sensors via their built-in I2C addresses. Burn bootloader to device, but do not upload any code (This is to prevent I2C master conflicts).
   * RS-485 mode: [Longbow_2BA_0x6B](Firmware/Longbow_2BA_0x6B)
 * Small form factor hard-mount board
-  * I2C mode: ***Firmware not yet built***
+  * I2C mode: ***Firmware not yet uploaded***
   * RS-485 mode: [Longbow_2BA_0x6B_HalfDuplex](Firmware/Longbow_2BA_0x6B_HalfDuplex)
 
 >> @bschulz1701: could you provide a link to the repo (is it TPDH lib) for "  * I2C mode: No firmware required. Library communicates directly with sensors via their built-in I2C addresses."
@@ -155,7 +155,7 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 
 1. Open the Arduino IDE.
 2. Follow [these instructions](https://github.com/SpenceKonde/ATTinyCore/blob/master/Installation.md) to install the [ATTinyCore board definitions](https://github.com/SpenceKonde/ATTinyCore)
-3. Select [ATTiny1634](https://github.com/SpenceKonde/ATTinyCore/blob/master/avr/extras/ATtiny_1634.md) without bootloader
+3. Select [ATTiny1634](https://github.com/SpenceKonde/ATTinyCore/blob/master/avr/extras/ATtiny_1634.md) **with** bootloader
 4. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
 5. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
 6. Go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
