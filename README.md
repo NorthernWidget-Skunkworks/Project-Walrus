@@ -125,6 +125,12 @@ For RS-485 Mode:
 
 ## Upload the firmware
 
+### Downloading and installing the Arduino IDE
+
+Go to https://www.arduino.cc/en/main/software. Choose the proper IDE version for your computer. For Windows, we suggest the non-app version to have more control over Arduino; this might change in the future. You will have to add custom libraries, so the web version will not work (at least, as of the time of writing). Download and install the Arduino IDE. Open it to begin the next steps.
+
+### AVR ISP
+
 To install firmware on the Walrus, you use the [2x3-pin ICSP (also called ISP) header](https://www.digikey.com/product-detail/en/3m/929665-09-03-I/3M156313-06-ND/681796) with a special device called an "in-circuit system programmer" (or just "in-system programmer; yup, that's what the acronym stands for).
 
 Many devices exist to upload a bootloader including:
@@ -133,11 +139,33 @@ Many devices exist to upload a bootloader including:
 * The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
 * The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
 
-Using an AVR ISP, upload the following firmware programs from the "Firmware" directory in this repository using the Arduino software:
-* Large form factor PTH board, I2C mode: `Longbow_2BA_0x6B`
-* Small form factor hard-mount board: `Longbow_2BA_0x6B_HalfDuplex`
+### Uploading the firmware
 
->> Link to resource for general Arduino install and upload, as well as for bootloading and AVR ISP, perhaps in Resnik repo, or in a more general Wiki <<
+Using an AVR ISP, upload the proper firmware programs from the ["Firmware" directory](Firmware) in this repository using the Arduino software:
+* Large form factor PTH board
+  * I2C mode: No firmware required. Library communicates directly with sensors via their built-in I2C addresses.
+  * RS-485 mode: [Longbow_2BA_0x6B](Firmware/Longbow_2BA_0x6B)
+* Small form factor hard-mount board
+  * I2C mode: ***Firmware not yet built***
+  * RS-485 mode: [Longbow_2BA_0x6B_HalfDuplex](Firmware/Longbow_2BA_0x6B_HalfDuplex)
+
+>> @bschulz1701: could you provide a link to the repo (is it TPDH lib) for "  * I2C mode: No firmware required. Library communicates directly with sensors via their built-in I2C addresses."
+
+**Instructions:**
+
+1. Open the Arduino IDE.
+2. Follow [these instructions](https://github.com/SpenceKonde/ATTinyCore/blob/master/Installation.md) to install the [ATTinyCore board definitions](https://github.com/SpenceKonde/ATTinyCore)
+3. Select [ATTiny1634](https://github.com/SpenceKonde/ATTinyCore/blob/master/avr/extras/ATtiny_1634.md) without bootloader
+4. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
+5. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
+6. Go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
+
+![Upload using programmer](https://media.githubusercontent.com/media/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR/master/Documentation/images/UploadUsingProgrammer.png)
+
+***Uploading using the in-system programmer.***
+
+***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
+
 
 ## Housing
 
