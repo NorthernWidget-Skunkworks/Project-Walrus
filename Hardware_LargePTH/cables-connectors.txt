@@ -1,0 +1,5 @@
+Cable for non-HardMount version: Alpha Wire 5004C: https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976
+
+Two options for ICSP connector:
+Standard-height 2x3 M header: https://www.digikey.com/product-detail/en/3m/929665-09-03-I/3M156313-06-ND/681796
+Tall 2-3 M header for extra clearance above the epoxy fill: https://www.digikey.com/product-detail/en/3m/929715-11-03-EU/3M156380-06-ND/3834482
