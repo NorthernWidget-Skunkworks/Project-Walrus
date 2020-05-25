@@ -151,13 +151,11 @@ Using an AVR ISP, upload the following firmware programs from the "Firmware" dir
 
 #### Materials and components required
 
-* 3D printer filament **[type?]**
+* 3D printer filament: ABS suggested
 * 4-conductor cable with a screw-cap sealing plug: we recommend the [Alpha Wire AR0400105-SL357](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497)
 * [4-pin hard mount plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165)
-* Two-part epoxy **[information here?]**
+* Two-part epoxy: [3M DP270 Clear](https://multimedia.3m.com/mws/media/66773O/3mtm-scotch-weldtm-epoxy-potting-compound-adhesive-dp270.pdf); can be purchased from [McMaster-Carr](https://www.mcmaster.com/7467A274)
 * 3x [\#4 self-tapping screws](https://www.polycase.com/screws-mbr-100)
-
->> @bschulz1701: fill in missing information
 
 #### 3D printing the housing
 
