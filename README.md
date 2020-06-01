@@ -104,23 +104,37 @@ After reflow is complete, check if everything worked. Do you have any jumped con
 
 >> Add image of cable ends (optional) and find how to integrate with housing section; cabling is a distinct topic, but the step of attaching the cable lies within the housing-construction step <<
 
-For I2C Mode:
+### HardMount with plug
 
-| Pin | Wire | Name |
-|-----|------|------|
-|V+|Red|Vcc|		
-|V-|Black|GND|
-|SIG1|Brown|SDA|
-|SIG2|Orange|SCL|
+Here we assume that you are using standard AlphaWire cables with waterproof attachments. Because of the wire insulation colors available for these cables, **our HardMount devices do NOT match standard wire-color definitions**. Wire-color definitions are:
 
-For RS-485 Mode:
+| **Color** | **Connection**        |
+|-----------|-----------------------|
+| White     | V+ (3.3-5.0 V)        |
+| Brown     | GND                   |
+| Black     | SIG1: SDA or RS-485 A |
+| Blue      | SIG2: SCL or RS-485 B |
 
-| Pin | Wire | Name |
-|-----|------|------|
-|V+|Red|Vcc|		
-|V-|Black|GND|
-|SIG1|Brown|A (RX+, TX+)|
-|SIG2|Orange|B (RX-, TX-)|
+### Large-form-factor/PTH design: standard wiring suggestion
+
+*These are our more standard wire-color suggestions*
+
+| **Color** | **Connection**                   |
+|-----------|----------------------------------|
+| Red       | V+ (3.3-5.0 V)                   |
+| Black     | GND                              |
+| Brown     | SIG1: SDA or RS-485 A (RX+, TX+) |
+| Orange    | SIG2: SCL or RS-485 B (RX-, TX-) |
+
+If you attach your own wire, pins on the Walrus are as follows, looking at the top side with the screw hole away from you:
+* Top left: SIG1: SDA for I2C; A (+) for RS-485
+* Top right: SIG 2: SCL for I2C; B (-) for RS-485
+* Bottom left: VCC (3.3V to 5V)
+* Bottom right: GND
+
+>> @awickert: check power ratings and pin definitions for above table and this planned figure with @bschulz1701
+
+![HardMount attachment points](Documentation/images/Walrus_HardMount_v020_top_HardMount_annotated_20200601.png)
 
 
 ## Upload the firmware
@@ -179,60 +193,103 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 
 #### Materials and components required
 
+##### All models
+
 * 3D printer filament: ABS suggested
-* 4-conductor cable with a screw-cap sealing plug: we recommend **Alpha Wire AR0400105-SL357** (-40 PVC jacket)
+* Two-part epoxy: [3M DP270 Clear](https://multimedia.3m.com/mws/media/66773O/3mtm-scotch-weldtm-epoxy-potting-compound-adhesive-dp270.pdf); can be purchased from [McMaster-Carr](https://www.mcmaster.com/7467A274)
+* [\#4-24 self-tapping screws](https://www.polycase.com/screws-mbr-100) ([Additional link: untested but probably identical screw from Fastenal](https://www.fastenal.com/products/details/32244))
+  * 5x with HardMount
+    * 1x to hold board in place
+    * 4x to to attach the lid of the 3D-printed enclosure
+  * 7x with large/PTH
+    * 3x to hold board in place
+    * 4x to to attach the lid of the 3D-printed enclosure
+
+>> @superchap123: Thoughts on integrating clips into the 3D print to not need screws?
+
+>> @awickert @superchap123: Redesign lid to diminish flow velocity and act insofar as possible as a stilling well
+
+
+##### HardMount with Plug
+
+* [4-pin "HardMount" plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) ([3D model](https://www.traceparts.com/en/product/allied-electronics-automation-m12-panel-mnt-male-4-way?CatalogPath=TRACEPARTS%3ATP09002002001004&Product=10-12012018-106023&PartNumber=1838893-2))
+* HardMount cable: **Alpha Wire AR0400105-SL357** (-40 PVC jacket)
   * [AlphaWire page](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105)
   * [Example from DigiKey](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497)
   * Comes in a [variety of lengths](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire)
   * User may choose a cable that terminates in a plug, alongside a matching recepticle in the wall of the data-logger box, for a specialized solution that does not require cable glands.
-* [4-pin "HardMount" plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) ([3D model](https://www.traceparts.com/en/product/allied-electronics-automation-m12-panel-mnt-male-4-way?CatalogPath=TRACEPARTS%3ATP09002002001004&Product=10-12012018-106023&PartNumber=1838893-2))
-* Two-part epoxy: [3M DP270 Clear](https://multimedia.3m.com/mws/media/66773O/3mtm-scotch-weldtm-epoxy-potting-compound-adhesive-dp270.pdf); can be purchased from [McMaster-Carr](https://www.mcmaster.com/7467A274)
-* 3x [\#4 self-tapping screws](https://www.polycase.com/screws-mbr-100)
+
+
+##### PTH or "HardMount" design without plug
+
+*Assuming that we are using a 4-wire connection instead of the full-bridge RS-485 (supported by the large-form-factor/PTH board) because this is being phased out in favor of a 4-wire half-bridge.*
+
+* [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), soldered to pads or rings
+
 
 #### 3D printing the housing
 
 Subfolders of the "3Dprint" directory contain "STL" files that you can use with a program called "[Slic3r](https://slic3r.org/)" to create 3-D printable parts for your housing. Assuming that you have a Prusa 3D printer, you will want to download the [Prusa variant of Slic3r](https://www.prusa3d.com/prusaslicer/). This comes with the appropriate setup files and information to help you configure the printer and print your parts.
 
->> TO DO: Options for HardMount with and without the plug. <<
+>> Link to all housings once designed <<
+
+>> TO DO: Options for HardMount with (and perhaps without) the plug. <<
+
 
 #### Cabling
 
->> EXAMPLES WITH CABLE COLORS <<
+##### HardMount with Plug
 
->> EXAMPLES WITH PTH AND HARDMOUNT, OR JUST HARDMOUNT? <<
+Solder the HardMount plug onto the four SMD pads with the notch (for plug orientation) at the bottom side of the board.
 
->> First, attach hard-mount plug. Then, attach cable. Or just solder cable on. <<
+>> @bschulz1701 Did you use a pliers to tighten down the four solder cups before attaching? Seems like it could be dangerous though if the assembler tries to do this from the side with the two resistors and accidentally crushes them.
+
+##### PTH or "HardMount" design without plug
+
+Optionally, pass the cable through its hole in the 3D-printed enclosure bottom for the pour-over epoxy encapsulation. This means that you will not later need to pass the full length of the cable through the hole!
+
+Next, solder the cable through the rings or onto the SMD pads. Ensure that all connections are solid prior to encapsulation. The encapsulation process will strain-relieve the cable.
 
 
 #### Potting
 
-After creating the housing, pot the boards in 2-part epoxy. MAKE SURE that a cable of the desired length is attached beforehand! Be careful to fully cover everything except for the white inside membrane on the pressure transducer. If epoxy touches this, the board is likely rendered useless.
+>> @bschulz1701: with this epoxy, do we need to conformally coat the boards first?
+
+After creating the housing, affix the logger to it using the \#4-24 screws listed above. If the design includes an integrated cable (instead of a HardMount plug), MAKE SURE that a cable of the desired length is attached beforehand! Otherwise, MAKE SURE that a HardMount plug is attached beforehand!
+
+>> @superchap123: Your clip design would come in here too.
+
+Before applying the epoxy, make sure that all zones where epoxy could leak out of the 3D-printed lower portion of the enclosure are sealed. The epoxy is somewhat viscous, so gaps need not be made completely airtight.
+
+Next, pot the boards in 2-part epoxy (per the supplies list above, we suggest [3M DP270 Clear](https://multimedia.3m.com/mws/media/66773O/3mtm-scotch-weldtm-epoxy-potting-compound-adhesive-dp270.pdf); can be purchased from [McMaster-Carr](https://www.mcmaster.com/7467A274)). Be careful to fully cover everything except for the white inside membrane on the pressure transducer. If epoxy touches this, it is rendered unreliable or useless.
 
 >> Walk through assembly with images <<
 
+
 ## Wiring to logger
+
+These instructions assume that you are using a [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) or [Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik) data logger. If this is not the case, similar pins are available on a generic Arduino board.
+
+### HardMount Plug
 
 Pass the cable through the housing to the logger, ideally using a cable gland that you can tighten on the box containing the logger: this can provide waterproofing as well as some strain relief. Follow the table in the [Wiring and pinout](#Wiring-and-pinout) section to attach individual wires to the appropriate pins on the data logger and (if needed) RS-485 converter. In bulleted-list form, with colors given for [Alpha Wire 5004C](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976):
 
 ### Power
 
-**In all cases, attach power wires to pins as follows:**
-* V- to GND or V- (**black**)
-* V+ to a positive voltage source between 3.3 and 5 V (**red**)
-
-### Data
+* V- (Walrus) to GND or V- (Logger)
+* V+ (Walrus) to a positive voltage source between 3.3 and 5 V (Logger)
 
 #### I2C
 
-**If using the sensor in I2C mode, attach the signal wires as follows:**
-* SIG1 to SDA (**brown**)
-* SIG2 to SCL (**orange**)
+If using the sensor in I2C mode, attach the signal wires as follows:
+* SIG1 (Walrus) to SDA (Logger)
+* SIG2 (Walrus) to SCL (Logger)
 
 #### RS-485
 
-**If using the sensor in RS-485 mode, attach the signal wires to the Longbow Backpack as follows**:
-* SIG1 to A (+) (**brown**)
-* SIG2 to B (-) (**orange**)
+If using the sensor in RS-485 mode, attach the signal wires to the Longbow Backpack as follows:
+* SIG1 (Walrus) to A+ (Longbow)
+* SIG2 (Walrus) to B- (Longbow)
 (You may use another RS-485 converter, in which case the wiring is up to you!)
 
 **Then use another set of four wires to connect the Longbow to the logger:**
@@ -240,7 +297,7 @@ Pass the cable through the housing to the logger, ideally using a cable gland th
 * Vin to a 3.3 to 5 V power source
 * SDA to SDA
 * SCL to SCL
-We recommend [Pololu's pre-crimped wires](https://www.pololu.com/category/71/wires-with-pre-crimped-terminals) for this with a male terminal, as it ensures that you can have these four wires in the proper order for both the Walrus and the data logger. For this reason, Northern Widget data loggers always have these four pins in the order:
+We recommend [Pololu's pre-crimped wires](https://www.pololu.com/category/71/wires-with-pre-crimped-terminals) for this with a male terminal, as it ensures that you can have these four wires in the proper order for both the Walrus and the data logger. For this reason, Northern Widget data loggers ([Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) and [Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik)) always have these four pins in the order:
 * GND
 * V+
 * SDA
