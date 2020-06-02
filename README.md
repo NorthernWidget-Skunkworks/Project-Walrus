@@ -216,7 +216,7 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 * HardMount cable: **Alpha Wire AR0400105-SL357** (-40 PVC jacket)
   * [AlphaWire page](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105)
   * [Example from DigiKey](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497)
-  * Comes in a [variety of lengths](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire)
+  * Comes in a [variety of lengths from 0.6 to 20 meters](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105) ([Digi-Key search results](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire))
   * User may choose a cable that terminates in a plug, alongside a matching recepticle in the wall of the data-logger box, for a specialized solution that does not require cable glands.
 
 
