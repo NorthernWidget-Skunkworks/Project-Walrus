@@ -303,6 +303,52 @@ We recommend [Pololu's pre-crimped wires](https://www.pololu.com/category/71/wir
 * SDA
 * SCL
 
+## Writing a program to connect to the Walrus sensor
+
+After uploading the Walrus firmware be able to use any standard Arduino device to connect to it and read its data.
+
+### Very simple Arduino code
+
+#### I2C
+
+This code is intended for any generic Arduino system.
+
+>> Note: Not all of this code is built yet. THIS IS A TEMPLATE!
+
+```c++
+// Include the Walrus library
+#include "Walrus_I2C.h"
+
+// Declare variables -- just as strings
+String header;
+String data;
+
+// Instantiate class
+Walrus myWalrus;
+
+void setup(){
+    // Begin Serial connection to computer at 38400 baud
+    Serial.begin(38400);
+    // Obtain the header just once
+    header = myWalrus.getHeader();
+    // Print the header to the serial monitor
+    Serial.println(header);
+}
+
+void loop(){
+    // Take one reading every (10 + time to take reading) seconds
+    // and print it to the screen
+    myWalrus.updateMeasurements();
+    data = myWalrus.getString();
+    Serial.println(data);
+    delay(10000); // Wait 10 seconds before the next reading, inefficiently
+}
+```
+
+#### RS-485
+
+***Not yet developed.***
+
 ## Deployment
 
 Pre-deployment check:
