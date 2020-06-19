@@ -183,11 +183,16 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 
 ## Housing
 
+### Large-form-factor PTH design
+
 ![Walrus PTH v0.0.0 with enclosure](Documentation/images/Walrus_PTH_v000_with_enclosure_and_scale_cleaned_background_20200428.png)
 
 ***Walrus v0.0.0 PTH and its housing.*** *Left: 3D-printed top of the housing; the slits are to prevent large material from hitting the sensor. Center: the bottom of the housing. Self-tapping holes are to screw the board onto this housing. The cable entering the housing through a tightly-fitting hole on the "south" side of the image has not yet been stripped to expose the ends of the individual wires. A different variant of the housing is longer to allow the user to strip more of the cable if desired while maintaining the cable jacketing in contact with the hole. Top right: Walrus v0.0.0. This fully-functional initial version is significantly larger than the current unit. Note the pressure transducer (white circle) at top left, and the fact that this has pins and hardware for a full-duplex RS-485 connection. Bottom right: U.S. penny for scale; 19.05 mm (0.75 inch) diameter.*
 
->> SECOND IMAGE WITH HARDMOUNT <<
+### HardMount design
+
+![Render of Walrus enclosure](Documentation/images/HardMount_withEnclosure_3Dperspective_CAD.png)
+***Render of the enclosure design.*** *The epoxy encapsulation tray sits within a wider cylinder containing a screen designed to keep sediment out. Design still in progress (19 June 2020).*
 
 ### How to build
 
