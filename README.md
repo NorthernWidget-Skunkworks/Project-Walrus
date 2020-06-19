@@ -216,7 +216,7 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 * HardMount cable: **Alpha Wire AR0400105-SL357** (-40 PVC jacket)
   * [AlphaWire page](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105)
   * [Example from DigiKey](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497)
-  * Comes in a [variety of lengths](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire)
+  * Comes in a [variety of lengths from 0.6 to 20 meters](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105) ([Digi-Key search results](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire))
   * User may choose a cable that terminates in a plug, alongside a matching recepticle in the wall of the data-logger box, for a specialized solution that does not require cable glands.
 
 
@@ -303,6 +303,52 @@ We recommend [Pololu's pre-crimped wires](https://www.pololu.com/category/71/wir
 * SDA
 * SCL
 
+## Writing a program to connect to the Walrus sensor
+
+After uploading the Walrus firmware be able to use any standard Arduino device to connect to it and read its data.
+
+### Very simple Arduino code
+
+#### I2C
+
+This code is intended for any generic Arduino system.
+
+>> Note: Not all of this code is built yet. THIS IS A TEMPLATE!
+
+```c++
+// Include the Walrus library
+#include "Walrus_I2C.h"
+
+// Declare variables -- just as strings
+String header;
+String data;
+
+// Instantiate class
+Walrus myWalrus;
+
+void setup(){
+    // Begin Serial connection to computer at 38400 baud
+    Serial.begin(38400);
+    // Obtain the header just once
+    header = myWalrus.getHeader();
+    // Print the header to the serial monitor
+    Serial.println(header);
+}
+
+void loop(){
+    // Take one reading every (10 + time to take reading) seconds
+    // and print it to the screen
+    myWalrus.updateMeasurements();
+    data = myWalrus.getString();
+    Serial.println(data);
+    delay(10000); // Wait 10 seconds before the next reading, inefficiently
+}
+```
+
+#### RS-485
+
+***Not yet developed.***
+
 ## Deployment
 
 Pre-deployment check:
@@ -314,6 +360,14 @@ Pre-deployment check:
 
 Once you are ready, you can deploy your sensor in the river, lake, or atmosphere that you hope to measure. Remember that you must correct all pressure measuremennts for barometric pressure in order to recover a water level. If the water is saline or heavily sediment laden, you must know the salinity or sediment-adjusted density as well.
 
+## Acknowledgments
 
-<br>
+Support for this project provided by:
+
+<img src="https://pbs.twimg.com/profile_images/1139626463932637186/qCak0yvY_400x400.png" alt="UMN ESCI" width="240px">
+
+<img src="https://ane4bf-datap1.s3-eu-west-1.amazonaws.com/wmocms/s3fs-public/styles/featured_media_detail/public/advanced_page/featured_media/wmologo2016_fulltext_horizontal_rgb_en-2.jpg?C4guHHfFZ0Uv029Eo5AvJLFg6nMR47hI&itok=NVNNIT7H" alt="WMO" width="240px">
+
+<br/>
+<br/>
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
