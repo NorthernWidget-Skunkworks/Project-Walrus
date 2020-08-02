@@ -355,6 +355,62 @@ void loop(){
 
 ***Not yet developed.***
 
+
+### Northern Widget Margay code
+
+The [Margay data logger](github.com/NorthernWidget-Skunkworks/Project-Margay) is the lightweight and low-power open-source data-logging option from Northern Widget. It saves data to a local SD card and includes on-board status measurements and a low-drift real-time clock. We have written [a library to interface with the Margay](github.com/NorthernWidget-Skunkworks/Margay_Library), which can in turn be used to link the Margay with sensors.
+
+#### I2C
+
+```c++
+// Include the Symbiont library
+#include "Margay.h"
+#include "Walrus_I2C.h"
+
+// Declare variables -- just as strings
+String header;
+String data;
+
+// Instantiate classes
+Walrus myWalrus;
+Margay Logger(Model_2v0, Build_B); // Margay v2.2; UPDATE CODE TO INDICATE THIS
+
+// Empty header to start; will include sensor labels and information
+String Header = "";
+
+// I2CVals for Symbiont
+uint8_t I2CVals[] = {0x40}; // DEFAULT BUT CLASHES WITH Symbiont-LiDAR
+
+//Number of seconds between readings
+uint32_t updateRate = 60;
+
+void setup(){
+    Header = Header + myWalrus.getHeader();
+    Logger.begin(I2CVals, sizeof(I2CVals), Header);
+    initialize();
+}
+
+void loop(){
+    initialize();
+    Logger.Run(update, updateRate);
+}
+
+String update() {
+    initialize();
+    return myWalrus.getString();
+}
+
+void initialize(){
+    myWalrus.begin();
+}
+```
+
+#### RS-485
+
+***Not yet developed.***
+
+
+
 ## Deployment
 
 Pre-deployment check:
