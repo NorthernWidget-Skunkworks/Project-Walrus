@@ -110,8 +110,8 @@ Here we assume that you are using standard AlphaWire cables with waterproof atta
 
 | **Color** | **Connection**        |
 |-----------|-----------------------|
-| White     | V+ (3.3-5.0 V)        |
-| Brown     | GND                   |
+| Brown     | V+ (3.3-5.0 V)        |
+| White     | GND                   |
 | Black     | SIG1: SDA or RS-485 A |
 | Blue      | SIG2: SCL or RS-485 B |
 
