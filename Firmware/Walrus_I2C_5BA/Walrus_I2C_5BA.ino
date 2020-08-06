@@ -671,13 +671,24 @@ float getTemp()
   // bool Sign = BitRead(ByteHigh, 4);
   // if(Sign) ByteHigh = ByteHigh | 0xE0; //Sign extend if needed
   ByteHigh = ByteHigh & 0x1F; //Clear flags
-  if((ByteHigh & 0x10) == 0x10) { //If temp < 0ºC
-    ByteHigh = ByteHigh & 0x0F; //Clear sign bit
-    return (256.0 - (float(ByteHigh)*16.0 + float(ByteLow)/16.0));
+  uint16_t TempVal = (ByteHigh << 8) | ByteLow; //Concatonate to 16 bit value (12 bit range)
+  float Temp = 0;
+  Temp = TempVal & 0x0FFF; //Clear flags
+  Temp = Temp/16.0;
+  if(TempVal & 0x1000) { //If negative value 
+    Temp = Temp - 256; 
   }
-  else {
-    return (float(ByteHigh)*16.0 + float(ByteLow)/16.0);
-  }
+  return Temp;
+
+  // ByteHigh = ByteHigh & 0x1F; //Clear flags
+  // if((ByteHigh & 0x10) == 0x10) { //If temp < 0ºC
+  //   ByteHigh = ByteHigh & 0x0F; //Clear sign bit
+  //   return (256.0 - (float(ByteHigh)*16.0 + float(ByteLow)/16.0));
+  // }
+  // else {
+  //   return (float(ByteHigh)*16.0 + float(ByteLow)/16.0);
+  // }
+
   // int16_t TempBits = (ByteLow >> 2) | (ByteHigh << 6); 
   // return float(TempBits)*0.0625; //Multiply by LSB //DEBUG
   // return ByteLow; //DEBUG!
