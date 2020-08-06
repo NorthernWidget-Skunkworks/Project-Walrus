@@ -242,13 +242,13 @@ void loop() {
     Reg[CTRL] = Reg[CTRL] &= 0x7F; //Clear ready flag only while new vals being written
     //LOAD VALUES
     getValues(); //Update valus before loading  //DEBUG!
-    SplitAndLoad(0x02, long(Pressure*1000.0)); //MicroBars pressure //DEBUG!
-    SplitAndLoad(0x06, uint16_t(Temp0)); //1/100 Degree C
-    SplitAndLoad(0x08, uint16_t(Temp1)); //1/100 Degree C
-    SplitAndLoad(0x0A, uint16_t(MODEL));
-    SplitAndLoad(0x0C, uint16_t(GROUPID));
-    SplitAndLoad(0x0E, uint16_t(INDID));
-    SplitAndLoad(0x10, uint16_t(FIRMWAREID));
+    SplitAndLoad(0x02, long(Pressure*1000.0)); //MicroBars pressure 
+    SplitAndLoad(0x06, long(Temp0*10000.0)); //1/10000 Degree C Forces integer, Min LSB = 0.0625
+    SplitAndLoad(0x0A, long(Temp1*10000.0)); //1/10000 Degree C Forces integer, Min LSB = 0.0625
+    SplitAndLoad(0x0E, uint16_t(MODEL));
+    SplitAndLoad(0x12, uint16_t(GROUPID));
+    SplitAndLoad(0x14, uint16_t(INDID));
+    SplitAndLoad(0x16, uint16_t(FIRMWAREID));
 
     // SplitAndLoad(0x0A, MODEL);
     // SplitAndLoad(0x0C, GROUPID);
