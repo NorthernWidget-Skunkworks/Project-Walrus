@@ -363,7 +363,7 @@ The [Margay data logger](github.com/NorthernWidget-Skunkworks/Project-Margay) is
 #### I2C
 
 ```c++
-// Include the Symbiont library
+// Include the Walrus library
 #include "Margay.h"
 #include "Walrus_I2C.h"
 
@@ -379,7 +379,7 @@ Margay Logger(Model_2v0, Build_B); // Margay v2.2; UPDATE CODE TO INDICATE THIS
 String Header = "";
 
 // I2CVals for Symbiont
-uint8_t I2CVals[] = {0x40}; // DEFAULT BUT CLASHES WITH Symbiont-LiDAR
+uint8_t I2CVals[] = {0x4D}; // DEFAULT
 
 //Number of seconds between readings
 uint32_t updateRate = 60;
