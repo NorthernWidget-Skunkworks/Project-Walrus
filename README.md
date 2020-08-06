@@ -378,7 +378,7 @@ Margay Logger(Model_2v0, Build_B); // Margay v2.2; UPDATE CODE TO INDICATE THIS
 // Empty header to start; will include sensor labels and information
 String Header = "";
 
-// I2CVals for Symbiont
+// I2CVals for Walrus
 uint8_t I2CVals[] = {0x4D}; // DEFAULT
 
 //Number of seconds between readings
