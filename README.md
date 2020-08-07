@@ -110,8 +110,8 @@ Here we assume that you are using standard AlphaWire cables with waterproof atta
 
 | **Color** | **Connection**        |
 |-----------|-----------------------|
-| White     | V+ (3.3-5.0 V)        |
-| Brown     | GND                   |
+| Brown     | V+ (3.3-5.0 V)        |
+| White     | GND                   |
 | Black     | SIG1: SDA or RS-485 A |
 | Blue      | SIG2: SCL or RS-485 B |
 
@@ -363,7 +363,7 @@ The [Margay data logger](github.com/NorthernWidget-Skunkworks/Project-Margay) is
 #### I2C
 
 ```c++
-// Include the Symbiont library
+// Include the Walrus library
 #include "Margay.h"
 #include "Walrus_I2C.h"
 
@@ -378,8 +378,8 @@ Margay Logger(Model_2v0, Build_B); // Margay v2.2; UPDATE CODE TO INDICATE THIS
 // Empty header to start; will include sensor labels and information
 String Header = "";
 
-// I2CVals for Symbiont
-uint8_t I2CVals[] = {0x40}; // DEFAULT BUT CLASHES WITH Symbiont-LiDAR
+// I2CVals for Walrus
+uint8_t I2CVals[] = {0x4D}; // DEFAULT
 
 //Number of seconds between readings
 uint32_t updateRate = 60;
