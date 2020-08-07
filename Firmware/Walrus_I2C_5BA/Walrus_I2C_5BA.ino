@@ -646,6 +646,9 @@ float getTemp()
   //  si.i2c_stop();
   //  delay(10);
   // }
+  const unsigned long MaxSampleTime = 250; //max ms before a new sample should be available 
+  while(millis() < MaxSampleTime); //Make sure at least 250ms have gone by before reading
+
   uint8_t ByteHigh = 0;
   uint8_t ByteLow = 0;
 
@@ -656,22 +659,11 @@ float getTemp()
   si.requestFrom(TempADR, 2);
   ByteHigh = si.read();
   ByteLow = si.read();
-  // for(int i = 0; i < 4; i++) { //DEBUG!
-  //  si.i2c_start((TempADR << 1) | I2C_WRITE);
 
-  //     bool Error = si.i2c_write((uint8_t)0x05); //Set to Temp Register 
-  //     si.i2c_stop();
-  //  si.i2c_start((TempADR << 1) | I2C_READ);
-  //  ByteHigh = si.i2c_read(false);  //Read in high and low bytes (big endian)
-  //  ByteLow = si.i2c_read(true);
-  //  si.i2c_stop();
-  //  delay(250);
-  // }
-
-  // bool Sign = BitRead(ByteHigh, 4);
-  // if(Sign) ByteHigh = ByteHigh | 0xE0; //Sign extend if needed
   ByteHigh = ByteHigh & 0x1F; //Clear flags
   uint16_t TempVal = (ByteHigh << 8) | ByteLow; //Concatonate to 16 bit value (12 bit range)
+  
+
   float Temp = 0;
   Temp = TempVal & 0x0FFF; //Clear flags
   Temp = Temp/16.0;
