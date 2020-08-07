@@ -206,7 +206,7 @@ void setup() {
     // si.begin();
     initTemp(); //DEBUG! REPLACE!
     initMS5803(); //DEBUG! REPLACE!
-    delay(500); //DEBUG!
+    // delay(500); //DEBUG!
     getValues(); // Update on power on //DEBUG!
 
   //Setup I2C slave
