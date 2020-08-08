@@ -106,7 +106,7 @@ After reflow is complete, check if everything worked. Do you have any jumped con
 
 ### HardMount with plug
 
-Here we assume that you are using standard AlphaWire cables with waterproof attachments. Because of the wire insulation colors available for these cables, **our HardMount devices do NOT match standard wire-color definitions**. Wire-color definitions are:
+Here we assume that you are using [standard Alpha Wire cables with waterproof attachments]([Alpha Wire 5004C](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976). Because of the wire insulation colors available for these cables and the locations of their attachment points to the [4-pin "HardMount" plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) ([3D model](https://www.traceparts.com/en/product/allied-electronics-automation-m12-panel-mnt-male-4-way?CatalogPath=TRACEPARTS%3ATP09002002001004&Product=10-12012018-106023&PartNumber=1838893-2)), **our HardMount devices do NOT match standard wire-color definitions (or any kind of standard)**. Wire-color definitions are:
 
 | **Color** | **Connection**        |
 |-----------|-----------------------|
@@ -220,9 +220,9 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 
 * [4-pin "HardMount" plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) ([3D model](https://www.traceparts.com/en/product/allied-electronics-automation-m12-panel-mnt-male-4-way?CatalogPath=TRACEPARTS%3ATP09002002001004&Product=10-12012018-106023&PartNumber=1838893-2))
 * HardMount cable: **Alpha Wire AR0400105-SL357** (-40 PVC jacket)
-  * [AlphaWire page](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105)
+  * [Alpha Wire page](http://www.Alpha Wire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105)
   * [Example from DigiKey](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497)
-  * Comes in a [variety of lengths from 0.6 to 20 meters](http://www.alphawire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105) ([Digi-Key search results](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire))
+  * Comes in a [variety of lengths from 0.6 to 20 meters](http://www.Alpha Wire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105) ([Digi-Key search results](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire))
   * User may choose a cable that terminates in a plug, alongside a matching recepticle in the wall of the data-logger box, for a specialized solution that does not require cable glands.
 
 
@@ -230,7 +230,7 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 
 *Assuming that we are using a 4-wire connection instead of the full-bridge RS-485 (supported by the large-form-factor/PTH board) because this is being phased out in favor of a 4-wire half-bridge.*
 
-* [4-conductor AlphaWire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), soldered to pads or rings
+* [4-conductor Alpha Wire](https://www.digikey.com/product-detail/en/alpha-wire/5004C-SL001/5004CSL001-ND/484976), soldered to pads or rings
 
 
 #### 3D printing the housing
