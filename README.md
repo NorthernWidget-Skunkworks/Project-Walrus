@@ -132,8 +132,6 @@ If you attach your own wire, pins on the Walrus are as follows, looking at the t
 * Bottom left: VCC (3.3V to 5V)
 * Bottom right: GND
 
->> @awickert: check power ratings and pin definitions for above table and this planned figure with @bschulz1701
-
 ![HardMount attachment points](Documentation/images/Walrus_HardMount_v020_top_HardMount_annotated_20200601.png)
 
 
@@ -246,9 +244,16 @@ Subfolders of the "3Dprint" directory contain "STL" files that you can use with 
 
 ##### HardMount with Plug
 
-Solder the HardMount plug onto the four SMD pads with the notch (for plug orientation) at the bottom side of the board.
-
->> @bschulz1701 Did you use a pliers to tighten down the four solder cups before attaching? Seems like it could be dangerous though if the assembler tries to do this from the side with the two resistors and accidentally crushes them.
+Solder the HardMount plug onto the four SMD pads with the notch (for plug orientation) at the bottom side of the board. The best way to do this is to:
+* Add small pillows of solder to each of the four pads, enough to create contact with the HardMount solder cups but not so much that it is not possible to slide the HardMount plug over them.
+* Slide the HardMount plug on; it will take a bit of finesse to keep it from being pushed off of the solder pillows.
+* Using some Blu Tack (or equivalent), fix the board and HardMount plug in place
+* Double-check that the notch in the HardMount plug is on the back side of the board
+* Solder on the first connection
+* Check whether the board is straight; reflow the solder as needed until the connection is secure
+* Solder the second connection
+* Flip the board, ensuring that it is straight (if not, make changes)
+* Solder the other two solder-cup connections
 
 ##### PTH or "HardMount" design without plug
 
