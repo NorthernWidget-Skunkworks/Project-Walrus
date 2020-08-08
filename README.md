@@ -276,6 +276,9 @@ Next, pot the boards in 2-part epoxy (per the supplies list above, we suggest [3
 
 >> Walk through assembly with images <<
 
+![Potting the large form factor Walrus](Documentation/images/Walrus_PTH_potting_2019-11-13_17.16.01.jpg)
+***Potting the large-form-factor Walrus.*** *3D print designs for this lower/tray portion and the to-be-attached lid are included [within this repository in the "3Dprint" folder](https://github.com/NorthernWidget-Skunkworks/Project-Walrus/tree/master/3Dprint/HousingLargePTH).*
+
 
 ## Wiring to logger
 
