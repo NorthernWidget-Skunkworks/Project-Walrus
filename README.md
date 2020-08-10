@@ -22,7 +22,7 @@ Dimensions: 42.0 x 12.7 cm
 #### Operating ranges
 
 **Power**
-* Input Voltage: 3.3 to 5 V DC
+* Input Voltage: 3.3 to 5.5 V DC
 * Logic Voltage: 0 to Vcc (Will operate at same logic level as input power supply)
 
 **Sensors**
@@ -110,7 +110,7 @@ Here we assume that you are using [standard Alpha Wire cables with waterproof at
 
 | **Color** | **Connection**        |
 |-----------|-----------------------|
-| Brown     | V+ (3.3-5.0 V)        |
+| Brown     | V+ (3.3-5.5 V)        |
 | White     | GND                   |
 | Black     | SIG1: SDA or RS-485 A |
 | Blue      | SIG2: SCL or RS-485 B |
@@ -121,7 +121,7 @@ Here we assume that you are using [standard Alpha Wire cables with waterproof at
 
 | **Color** | **Connection**                   |
 |-----------|----------------------------------|
-| Red       | V+ (3.3-5.0 V)                   |
+| Red       | V+ (3.3-5.5 V)                   |
 | Black     | GND                              |
 | Brown     | SIG1: SDA or RS-485 A (RX+, TX+) |
 | Orange    | SIG2: SCL or RS-485 B (RX-, TX-) |
@@ -129,7 +129,7 @@ Here we assume that you are using [standard Alpha Wire cables with waterproof at
 If you attach your own wire, pins on the Walrus are as follows, looking at the top side with the screw hole away from you:
 * Top left: SIG1: SDA for I2C; A (+) for RS-485
 * Top right: SIG 2: SCL for I2C; B (-) for RS-485
-* Bottom left: VCC (3.3V to 5V)
+* Bottom left: VCC (3.3V to 5.5V)
 * Bottom right: GND
 
 ![HardMount attachment points](Documentation/images/Walrus_HardMount_v020_top_HardMount_annotated_20200601.png)
@@ -291,7 +291,7 @@ Pass the cable through the housing to the logger, ideally using a cable gland th
 ### Power
 
 * V- (Walrus) to GND or V- (Logger)
-* V+ (Walrus) to a positive voltage source between 3.3 and 5 V (Logger)
+* V+ (Walrus) to a positive voltage source between 3.3 and 5.5 V (Logger)
 
 #### I2C
 
@@ -308,7 +308,7 @@ If using the sensor in RS-485 mode, attach the signal wires to the Longbow Backp
 
 **Then use another set of four wires to connect the Longbow to the logger:**
 * GND to GND
-* Vin to a 3.3 to 5 V power source
+* Vin to a 3.3 to 5.5 V power source
 * SDA to SDA
 * SCL to SCL
 We recommend [Pololu's pre-crimped wires](https://www.pololu.com/category/71/wires-with-pre-crimped-terminals) for this with a male terminal, as it ensures that you can have these four wires in the proper order for both the Walrus and the data logger. For this reason, Northern Widget data loggers ([Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) and [Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik)) always have these four pins in the order:
