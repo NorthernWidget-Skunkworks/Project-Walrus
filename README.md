@@ -351,9 +351,8 @@ void setup(){
 
 void loop(){
     // Take one reading every (10 + time to take reading) seconds
-    // and print it to the screen
-    myWalrus.updateMeasurements();
     data = myWalrus.getString();
+    // and print it to the screen
     Serial.println(data);
     delay(10000); // Wait 10 seconds before the next reading, inefficiently
 }
