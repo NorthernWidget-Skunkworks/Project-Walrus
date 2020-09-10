@@ -201,13 +201,7 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 
 * 3D printer filament: ABS suggested
 * Two-part epoxy: [3M DP270 Clear](https://multimedia.3m.com/mws/media/66773O/3mtm-scotch-weldtm-epoxy-potting-compound-adhesive-dp270.pdf); can be purchased from [McMaster-Carr](https://www.mcmaster.com/7467A274)
-* [\#4-24 self-tapping screws](https://www.polycase.com/screws-mbr-100) ([Additional link: untested but probably identical screw from Fastenal](https://www.fastenal.com/products/details/32244))
-  * 5x with HardMount
-    * 1x to hold board in place
-    * 4x to to attach the lid of the 3D-printed enclosure
-  * 7x with large/PTH
-    * 3x to hold board in place
-    * 4x to to attach the lid of the 3D-printed enclosure
+* Conformal coating to help protect components during epoxy encapsulation. We suggest [MG 419D](https://www.mgchemicals.com/products/conformal-coatings/acrylic-conformal-coating-419d) ([Digi-Key purchase link](https://www.digikey.com/product-detail/en/mg-chemicals/419D-55ML/473-1388-ND))
 
 ##### HardMount with Plug
 
@@ -217,9 +211,14 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
   * [Example from DigiKey](https://www.digikey.com/product-detail/en/alpha-wire/AR0400105-SL357/AR0400105SL357-ND/6555497)
   * Comes in a [variety of lengths from 0.6 to 20 meters](http://www.Alpha Wire.com/en/Products/Connectivity/AlphaConnect/Cordsets/AR0400105) ([Digi-Key search results](https://www.digikey.com/products/en/cable-assemblies/circular-cable-assemblies/448?FV=2331%7C312745%2C2344%7C346572%2C2350%7C349292%2C2380%7C203167%2C-8%7C448%2C2345%7C1%2C2352%7C387800&quantity=0&ColumnSort=77&page=1&stock=1&rohs=1&nstock=1&k=M12+Alpha+Wire&pageSize=25&pkeyword=M12+Alpha+Wire))
   * User may choose a cable that terminates in a plug, alongside a matching recepticle in the wall of the data-logger box, for a specialized solution that does not require cable glands.
+* One [#2-56 x 3/16" thread-cutting screw](https://www.fastenal.com/products/details/0143391) per board to fasten it to the housing for the epoxy encapsulation
 
 
 ##### PTH or "HardMount" design without plug
+
+* 7x [\#4-24 self-tapping screws](https://www.polycase.com/screws-mbr-100) ([Additional link: untested but probably identical screw from Fastenal](https://www.fastenal.com/products/details/32244))
+  * 3x to hold board in place
+  * 4x to to attach the lid of the 3D-printed enclosure
 
 *Assuming that we are using a 4-wire connection instead of the full-bridge RS-485 (supported by the large-form-factor/PTH board) because this is being phased out in favor of a 4-wire half-bridge.*
 
