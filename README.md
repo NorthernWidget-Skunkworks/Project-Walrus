@@ -201,7 +201,7 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 
 * 3D printer filament: ABS suggested
 * Two-part epoxy: [3M DP270 Clear](https://multimedia.3m.com/mws/media/66773O/3mtm-scotch-weldtm-epoxy-potting-compound-adhesive-dp270.pdf); can be purchased from [McMaster-Carr](https://www.mcmaster.com/7467A274)
-* Conformal coating to help protect components during epoxy encapsulation. We suggest [MG 419D](https://www.mgchemicals.com/products/conformal-coatings/acrylic-conformal-coating-419d) ([Digi-Key purchase link](https://www.digikey.com/product-detail/en/mg-chemicals/419D-55ML/473-1388-ND))
+* Conformal coating to help protect components during epoxy encapsulation. We suggest [MG 419D](https://www.mgchemicals.com/products/conformal-coatings/acrylic-conformal-coating-419d) ([Digi-Key purchase link](https://www.digikey.com/product-detail/en/mg-chemicals/419D-55ML/473-1388-ND)). If you prefer a silicone conformal coat, we suggest [MG 422C](https://www.mgchemicals.com/products/conformal-coatings/422c-silicone-conformal-coating), though we recommend this instead for an external (rather than internal, as this will be), flexible coat.
 
 ##### HardMount with Plug
 
