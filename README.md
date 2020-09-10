@@ -209,11 +209,6 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
     * 3x to hold board in place
     * 4x to to attach the lid of the 3D-printed enclosure
 
->> @superchap123: Thoughts on integrating clips into the 3D print to not need screws?
-
->> @awickert @superchap123: Redesign lid to diminish flow velocity and act insofar as possible as a stilling well
-
-
 ##### HardMount with Plug
 
 * [4-pin "HardMount" plug](https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/1838893-2/A97650-ND/1764165) ([3D model](https://www.traceparts.com/en/product/allied-electronics-automation-m12-panel-mnt-male-4-way?CatalogPath=TRACEPARTS%3ATP09002002001004&Product=10-12012018-106023&PartNumber=1838893-2))
