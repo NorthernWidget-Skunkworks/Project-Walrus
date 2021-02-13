@@ -313,7 +313,9 @@ We recommend [Pololu's pre-crimped wires](https://www.pololu.com/category/71/wir
 
 ## Writing a program to connect to the Walrus sensor
 
-After uploading the Walrus firmware be able to use any standard Arduino device to connect to it and read its data.
+After uploading the Walrus firmware, you should be able to use any standard Arduino device to connect to it and read its data.
+
+The firmware uploaded to the Arduino device should include the [Walrus library](https://github.com/NorthernWidget-Skunkworks/Walrus_Library) as demonstrated below. Documentation for the Walrus library, auto-generated using doxygen, is available on its linked GitHub page.
 
 ### Very simple Arduino code
 
