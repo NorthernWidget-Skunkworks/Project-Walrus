@@ -156,10 +156,10 @@ Many devices exist to upload firmware, including:
 Using an AVR ISP, upload the proper firmware programs from the ["Firmware" directory](Firmware) in this repository using the Arduino software:
 * Large form factor PTH board
   * I2C mode: No firmware required, but fuses must be set (see instructions, below)
-  * RS-485 mode: [Longbow_2BA_0x6B](Firmware/Longbow_2BA_0x6B)
+  * RS-485 mode: [Longbow_2BA_0x6B](Firmware/Longbow_2BA_0x6B) (This firmware is for the 02BA; you will need to switch these with other coefficients, available in the commented and uncommented lines of /Firmware/Walrus_I2C_5BA, to modify this for a different transducer pressure range.)
 * Small form factor hard-mount board
-  * I2C mode: Set the fuses (see instructions below) and then upload ***Firmware not yet uploaded***
-  * RS-485 mode: [Longbow_2BA_0x6B_HalfDuplex](Firmware/Longbow_2BA_0x6B_HalfDuplex)
+  * I2C mode: Set the fuses (see instructions below) and then upload [Walrus_I2C_5BA](/Firmware/Walrus_I2C_5BA/) (This firmware is for the 05BA; there are lines in this code to comment and uncomment to modify it for other versions of the Walrus.)
+  * RS-485 mode: [Longbow_2BA_0x6B_HalfDuplex](Firmware/Longbow_2BA_0x6B_HalfDuplex) (This firmware is for the 02BA; you will need to switch these with other coefficients, available in the commented and uncommented lines of /Firmware/Walrus_I2C_5BA, to modify this for a different transducer pressure range.)
 
 >> @bschulz1701: could you provide a link to the repo (is it TPDH lib) for "  * I2C mode: No firmware required. Library communicates directly with sensors via their built-in I2C addresses."
 
