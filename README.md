@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/154994439.svg)](https://zenodo.org/badge/latestdoi/154994439)
+
 # The Walrus: A Pressure and Temperature Sensor for Water-Level and Barometric Measurements
 
 ![Walrus pup; photo by Max Smith](Documentation/images/WalrusPup_MaxSmith.jpg)
