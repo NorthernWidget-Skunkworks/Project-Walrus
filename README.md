@@ -280,7 +280,7 @@ Next, pot the boards in 2-part epoxy (per the supplies list above, we suggest [3
 
 ## Wiring to logger
 
-These instructions assume that you are using a [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) or [Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik) data logger. If this is not the case, similar pins are available on a generic Arduino board.
+These instructions assume that you are using a [Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) or [Okapi](https://github.com/NorthernWidget-Skunkworks/Project-Okapi) data logger. If this is not the case, similar pins are available on a generic Arduino board.
 
 ### HardMount Plug
 
@@ -309,7 +309,7 @@ If using the sensor in RS-485 mode, attach the signal wires to the Longbow Backp
 * Vin to a 3.3 to 5.5 V power source
 * SDA to SDA
 * SCL to SCL
-We recommend [Pololu's pre-crimped wires](https://www.pololu.com/category/71/wires-with-pre-crimped-terminals) for this with a male terminal, as it ensures that you can have these four wires in the proper order for both the Walrus and the data logger. For this reason, Northern Widget data loggers ([Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) and [Resnik](https://github.com/NorthernWidget-Skunkworks/Project-Resnik)) always have these four pins in the order:
+We recommend [Pololu's pre-crimped wires](https://www.pololu.com/category/71/wires-with-pre-crimped-terminals) for this with a male terminal, as it ensures that you can have these four wires in the proper order for both the Walrus and the data logger. For this reason, Northern Widget data loggers ([Margay](https://github.com/NorthernWidget-Skunkworks/Project-Margay) and [Okapi](https://github.com/NorthernWidget-Skunkworks/Project-Okapi)) always have these four pins in the order:
 * GND
 * V+
 * SDA
