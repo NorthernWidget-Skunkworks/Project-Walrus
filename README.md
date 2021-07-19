@@ -153,6 +153,8 @@ Many devices exist to upload firmware, including:
 * The versatile [Olimex AVR-ISP-MK2](https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/open-source-hardware)
 * The [Adafruit USBtinyISP](https://www.adafruit.com/product/46)
 
+***Note: be sure to download and/or update drivers for your ISP***
+
 ### Uploading the firmware
 
 Using an AVR ISP, upload the proper firmware programs from the ["Firmware" directory](Firmware) in this repository using the Arduino software:
