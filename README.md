@@ -54,7 +54,7 @@ The Walrus comes in two forms:
 
 ### Files
 
-The files for production are located in folders starting with the word "Hardware". These folders contain:
+The files for production are located in folders starting with the word "Hardware." These folders contain:
 
 * "\*.brd" and "\*.sch" files. These are the circuit board and its schematic for use with the EAGLE CAD software, which you can download for free: https://www.autodesk.com/products/eagle/free-download
 * A "\*.csv" file that contains the "BoM" -- the bill of materials. This lists all required parts to construct the board
@@ -174,7 +174,7 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 3. Select [ATTiny1634](https://github.com/SpenceKonde/ATTinyCore/blob/master/avr/extras/ATtiny_1634.md) **(No bootloader)**
 4. Plug your ISP of choice into your computer (via a USB cable) and onto the 6-pin header. There are two ways to place it on; the header is aligned such that the ribbon cable should be facing away from the board while programming. If this fails without being able to upload, try flipping the header around. This should both power the board and provide communications.
 5. Go to Tools --> Programmer and select the appropriate programmer based on what you are using.
-6. Go to Tools --> Burn Bootloader. Yes, we know that you just selected "ATTiny1634 (No bootloader)". But this step sets the fuses, which configure their internal oscillator and brown-out detection.
+6. Go to Tools --> Burn Bootloader. Yes, we know that you just selected "ATTiny1634 (No bootloader)," but this step sets the fuses, which configure their internal oscillator and brown-out detection.
 7. Unless you are configuring a large-form-factor Walrus in I2C mode (in which case you are now done), open the appropriate firmware (linked above). Then go to Sketch --> Upload Using Programmer. After several seconds, you learn whether you succeeded or failed. Hopefully it worked!
 
 ![Upload using programmer](https://media.githubusercontent.com/media/NorthernWidget-Skunkworks/Project-Symbiont-LiDAR/master/Documentation/images/UploadUsingProgrammer.png)
