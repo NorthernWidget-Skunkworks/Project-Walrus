@@ -184,6 +184,85 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 ***Important note for Linux users:*** You must supply permissions to the Arduino IDE for it to be able to use the ICSP, or you will have to run it using `sudo`. The former option is better; the latter is easier in the moment.
 
 
+## Register map and firmware internals
+
+The Walrus firmware runs on an ATMega microcontroller and exposes an I2C register map to the host logger. The default I2C address is `0x4D`.
+
+Two layouts exist: the **current firmware** (deployed) and the **proposed** layout under [NW-Device-Specification](https://github.com/NorthernWidget/NW-Device-Specification) Schema 1, which the firmware will be updated to implement.
+
+### Current register map (deployed firmware)
+
+26-byte array. Identity fields (MODEL, GROUPID, INDID, FIRMWAREID) mixed into sensor data. Status ready flag is bit 7.
+
+```
+0x00        CTRL/Status   bit 7=ready; bits 1:0=update rate selector (0–3)
+0x01        —             unused
+0x02–0x05   Pressure      int32, µBar (library: val/1000.0 → mBar)
+0x06–0x09   Temp ext      int32, 1/10000 °C (MCP9808 external sensor)
+0x0A–0x0D   Temp MS5803   int32, 1/10000 °C (MS5803 internal sensor)
+0x0E–0x0F   MODEL         uint16 (0x5702)
+0x10–0x11   —             gap (nothing loaded)
+0x12–0x13   GROUPID       uint16
+0x14–0x15   INDID         uint16
+0x16–0x17   FIRMWAREID    uint16 (0x0001)
+```
+
+### Proposed register map (NW-Device-Specification Schema 1)
+
+Two 32-byte pages. Identity moves entirely to Page 0 (EEPROM). Sensor data in Page 1 (SRAM). No calibration page (MS5803 coefficients are read from its internal PROM at startup).
+
+**Page 0 (0x00–0x1F) — Identity (EEPROM)**
+
+```
+Block 0 (0x00–0x07)   Core identity
+  0x00        0x01              Schema (NW-Device-Specification v1)
+  0x01–0x06   'W','a','l','r','u','s'   Device name (ASCII)
+  0x07        0x00              Null padding
+
+Block 1 (0x08–0x0F)   Version
+  0x08        HW major
+  0x09        HW minor
+  0x0A        FW patch          (NW combined-repo convention)
+  0x0B–0x0D   0x00,0x00,0x00    Unused (combined repo)
+  0x0E–0x0F   0x00,0x00         Reserved
+
+Block 2 (0x10–0x17)   Serial number
+  0x10–0x11   0x5702            Board type ('W'=0x57, revision index 2; matches MODEL)
+  0x12–0x13   [manufacture]     Group ID
+  0x14–0x15   [manufacture]     Unique ID
+  0x16–0x17   0x00,0x00         FirmwareID (legacy, reserved)
+
+Block 3 (0x18–0x1F)   Integrity + administration
+  0x18–0x1C   0x00 ×5           Reserved
+  0x1D        0x00              Magic byte (reserved; purpose TBD)
+  0x1E        [computed]        CRC-8 of bytes 0x00–0x1D
+  0x1F        0x4D              I2C address (writable; 0xFF = use default)
+```
+
+**Page 1 (0x20–0x3F) — Sensor data (SRAM)**
+
+```
+Block 0 (0x20–0x27)   MS5803 — pressure + temperature
+  0x20        Status       bit 0=ready, bit 1=MS5803 fault, bit 2=ext temp fault
+  0x21–0x24   Pressure     int32, µBar, little-endian
+  0x25–0x26   Temp MS5803  int16, 0.01 °C, little-endian
+  0x27        Reserved
+
+Block 1 (0x28–0x2F)   External temperature sensor (MCP9808)
+  0x28–0x29   Temp ext     int16, 0.01 °C, little-endian
+  0x2A–0x2F   Reserved
+
+Block 2–3 (0x30–0x3F)   Reserved
+```
+
+### Open items before firmware update
+
+Three issues must be resolved before implementing Schema 1:
+
+1. **Status bit:** Current firmware uses bit 7 as the ready flag; Schema 1 uses bit 0. Library `newData()` must be updated to match.
+2. **Temperature precision:** Current firmware stores 1/10000 °C (int32, 4 bytes); proposed Schema 1 uses 0.01 °C (int16, 2 bytes). Sensor accuracy (MCP9808 ±0.0625 °C, MS5803 ±1 °C) is well within 0.01 °C resolution.
+3. **Pressure units:** Current firmware uses µBar; Haar Schema 1 proposes 0.01 hPa (1 µBar = 0.001 hPa — different units). Resolve unit choice in [NW-Device-Specification](https://github.com/NorthernWidget/NW-Device-Specification) before updating either firmware.
+
 ## Housing
 
 ### Large-form-factor PTH design
