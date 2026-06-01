@@ -508,6 +508,19 @@ Pre-deployment check:
 
 Once you are ready, you can deploy your sensor in the river, lake, or atmosphere that you hope to measure. Remember that you must correct all pressure measuremennts for barometric pressure in order to recover a water level. If the water is saline or heavily sediment laden, you must know the salinity or sediment-adjusted density as well.
 
+## NW-Device-Specification — Schema 1, Page 0
+
+Implements [NW-Device-Specification](https://github.com/NorthernWidget/NW-Device-Specification) Schema 1. The 32-byte identity block (Page 0) is stored at the top of EEPROM:
+
+```
+Block 0:  Schema=0x01, Name='W','a','l','r','u','s',0x00
+Block 1:  HW major=[mfr], HW minor=[mfr], FW patch=[mfr], 0x00,0x00,0x00, Reserved
+Block 2:  Board type=0x5702 ('W'=0x57, rev 2), Group ID=[mfr], Unique ID=[mfr], FirmwareID=0x0000
+Block 3:  Reserved, Magic=0x00, CRC=[computed], I2C address=0x57
+```
+
+Legacy deployed units use I²C address `0x4D` (pre-Schema-1).
+
 ## Acknowledgments
 
 Support for this project provided by:
