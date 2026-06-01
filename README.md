@@ -33,15 +33,28 @@ Dimensions: 42.0 x 12.7 cm
 * Pressure, maximum, untested: 0 to 30 atm (i.e. barometer to 290 m water depth)
 * Cable length: 3 m (I2C) or 1000 m (RS-485).
 
-The pressure operating range depends on the sensor element used. The [**MS5803-02BA**](https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=MS5803-02BA&DocType=Data+Sheet&DocLang=English) is the standard model that we use for pressure measurements of up to 10 m
-
 The pressure transducer contains an internal temperature sensor, and a secondary (and more accurate) external temperature sensor is also mounted on the *Walrus*. This external sensor is the [MCP9808](http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en556196) in an 8-MSOP package. This sensor has a range of -40 to 125 C.
 
 RS-485 communications allow for a signal to be transmitted over long distances, but require a device that can decode this signal, such as our [Project-Longbow](https://github.com/NorthernWidget-Skunkworks/Project-Longbow).
 
+#### MS5803 pressure sensor variants
+
+The pressure operating range and resolution depend on the MS5803 variant installed. All variants use the same footprint and firmware (with appropriate coefficient selection).
+
+| Variant | Application | Range | Resolution @ OSR=4096 | Water depth equiv. |
+|---------|-------------|-------|-----------------------|--------------------|
+| [MS5803-01BA](https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=MS5803-01BA&DocType=Data+Sheet&DocLang=English) | Barometer | 10–1300 mbar | ~0.012 mbar | ~0.12 mm |
+| [MS5803-02BA](https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=MS5803-02BA&DocType=Data+Sheet&DocLang=English) | Shallow water | 0–2 bar | ~0.020 mbar | ~0.2 mm |
+| [MS5803-05BA](https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=MS5803-05BA&DocType=Data+Sheet&DocLang=English) | Medium depth | 0–6 bar | ~0.050 mbar | ~0.5 mm |
+| [MS5803-14BA](https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=MS5803-14BA&DocType=Data+Sheet&DocLang=English) | Deep water | 0–14 bar | ~0.200 mbar | ~2 mm |
+
+The **MS5803-02BA** is the standard variant (pressure measurements to ~10 m water depth). The **MS5803-01BA** converts the Walrus into a high-resolution barometer. 1 mbar ≈ 1 cm of freshwater at standard conditions.
+
+Pressure values are stored in the I2C register map as µBar (int32). All variants fit within int32 range (~2.1 billion µBar max).
+
 #### Resolution
 
-Pressure: +/- 1 mm water (0.1 mbar)
+Pressure: see MS5803 variant table above
 Temperature sensor within pressure transducer (typical): +/- 2.0 C
 External temperature sensor (typical): +/- 0.5 C
 
