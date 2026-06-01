@@ -256,10 +256,11 @@ Block 3 (0x18–0x1F)   Integrity + administration
 
 ```
 Block 0 (0x20–0x27)   MS5803 — pressure + temperature
-  0x20        Status       bit 0=ready, bit 1=MS5803 fault, bit 2=ext temp fault
+  0x20        Status       bit 0=ready, bit 1=MS5803 fault, bit 2=ext temp fault,
+                           bit 7=pan-fault
   0x21–0x24   Pressure     int32, µBar, little-endian
   0x25–0x26   Temp MS5803  int16, 0.01 °C, little-endian
-  0x27        Reserved
+  0x27        Extended faults (reserved, 0x00)
 
 Block 1 (0x28–0x2F)   External temperature sensor (MCP9808)
   0x28–0x29   Temp ext     int16, 0.01 °C, little-endian
@@ -268,13 +269,9 @@ Block 1 (0x28–0x2F)   External temperature sensor (MCP9808)
 Block 2–3 (0x30–0x3F)   Reserved
 ```
 
-### Open items before firmware update
+### Remaining Schema 1 migration items
 
-Three issues must be resolved before implementing Schema 1:
-
-1. **Status bit:** Current firmware uses bit 7 as the ready flag; Schema 1 uses bit 0. Library `newData()` must be updated to match.
-2. **Temperature precision:** Current firmware stores 1/10000 °C (int32, 4 bytes); proposed Schema 1 uses 0.01 °C (int16, 2 bytes). Sensor accuracy (MCP9808 ±0.0625 °C, MS5803 ±1 °C) is well within 0.01 °C resolution.
-3. **Pressure units:** Current firmware uses µBar; Haar Schema 1 proposes 0.01 hPa (1 µBar = 0.001 hPa — different units). Resolve unit choice in [NW-Device-Specification](https://github.com/NorthernWidget/NW-Device-Specification) before updating either firmware.
+1. **Temperature precision:** Current firmware stores temperature as int32, 1/10000 °C at the pre-Schema-1 addresses (0x06–0x09, 0x0A–0x0D); Schema 1 uses int16, 0.01 °C at 0x25–0x26 (MS5803) and 0x28–0x29 (MCP9808). Sensor accuracy (MCP9808 ±0.0625 °C, MS5803 ±1 °C) is well within 0.01 °C resolution. Library `getTemperature()` must be updated to read from the new addresses with the new divisor (100, not 10000).
 
 ## Housing
 
