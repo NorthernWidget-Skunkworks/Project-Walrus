@@ -186,7 +186,7 @@ Using an AVR ISP, upload the proper firmware programs from the ["Firmware" direc
 
 ## Register map and firmware internals
 
-The Walrus firmware runs on an ATMega microcontroller and exposes an I2C register map to the host logger. The default I2C address is `0x4D`.
+The Walrus firmware runs on an ATtiny1634 microcontroller and exposes an I2C register map to the host logger. The default I2C address is `0x4D`.
 
 Two layouts exist: the **current firmware** (deployed) and the **proposed** layout under [NW-Device-Specification](https://github.com/NorthernWidget/NW-Device-Specification) Schema 1, which the firmware will be updated to implement.
 
