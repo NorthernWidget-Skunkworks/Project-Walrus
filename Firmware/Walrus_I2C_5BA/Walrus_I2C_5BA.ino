@@ -249,8 +249,8 @@ void loop() {
     SplitAndLoad(0x12, uint16_t(GROUPID));
     SplitAndLoad(0x14, uint16_t(INDID));
     SplitAndLoad(0x16, uint16_t(FIRMWAREID));
-    SplitAndLoad(0x21, long(Pressure*1000.0));              //Schema 1: pressure, int32, µBar
-    SplitAndLoad(0x25, (unsigned int)(int16_t)_temperature_actual); //Schema 1: temp MS5803, int16, 0.01°C
+    SplitAndLoad(0x22, long(Pressure*1000.0));              //Schema 1: pressure, int32, µBar
+    SplitAndLoad(0x26, (unsigned int)(int16_t)_temperature_actual); //Schema 1: temp MS5803, int16, 0.01°C
     SplitAndLoad(0x28, (unsigned int)(int16_t)(Temp0*100.0));       //Schema 1: temp ext, int16, 0.01°C
 
     Reg[0x20] |= 0x01; //Set ready flag (Page 1 status byte, bit 0)

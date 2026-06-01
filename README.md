@@ -258,9 +258,9 @@ Block 3 (0x18–0x1F)   Integrity + administration
 Block 0 (0x20–0x27)   MS5803 — pressure + temperature
   0x20        Status       bit 0=ready, bit 1=MS5803 fault, bit 2=ext temp fault,
                            bit 7=pan-fault
-  0x21–0x24   Pressure     int32, µBar, little-endian
-  0x25–0x26   Temp MS5803  int16, 0.01 °C, little-endian
-  0x27        Extended faults (reserved, 0x00)
+  0x21        Extended faults (reserved, 0x00)
+  0x22–0x25   Pressure     int32, µBar, little-endian
+  0x26–0x27   Temp MS5803  int16, 0.01 °C, little-endian
 
 Block 1 (0x28–0x2F)   External temperature sensor (MCP9808)
   0x28–0x29   Temp ext     int16, 0.01 °C, little-endian
