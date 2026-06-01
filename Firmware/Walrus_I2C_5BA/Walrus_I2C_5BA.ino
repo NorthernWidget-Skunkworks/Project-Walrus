@@ -239,7 +239,7 @@ void loop() {
     //  delay(800); //Wait for new sample
     // }
     // digitalWrite(9, HIGH); //DEBUG!
-    Reg[CTRL] &= ~0x01; //Clear ready flag while new values are being written
+    Reg[CTRL] = Reg[CTRL] &= 0x7F; //Clear ready flag only while new vals being written
     //LOAD VALUES
     getValues(); //Update valus before loading  //DEBUG!
     SplitAndLoad(0x02, long(Pressure*1000.0)); //MicroBars pressure 
@@ -264,7 +264,7 @@ void loop() {
     // SplitAndLoad(0x15, GetADC(1));
     // SplitAndLoad(0x17, GetADC(2));
 
-    Reg[CTRL] |= 0x01; //Set ready flag
+    Reg[CTRL] = Reg[CTRL] |= 0x80; //Set ready flag //DEBUG!
     // digitalWrite(9, LOW); //DEBUG!
     StartSample = false; //Clear flag when new values updated  
   }
