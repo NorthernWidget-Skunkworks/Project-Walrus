@@ -269,10 +269,6 @@ Block 1 (0x28–0x2F)   External temperature sensor (MCP9808)
 Block 2–3 (0x30–0x3F)   Reserved
 ```
 
-### Remaining Schema 1 migration items
-
-1. **Temperature precision:** Current firmware stores temperature as int32, 1/10000 °C at the pre-Schema-1 addresses (0x06–0x09, 0x0A–0x0D); Schema 1 uses int16, 0.01 °C at 0x25–0x26 (MS5803) and 0x28–0x29 (MCP9808). Sensor accuracy (MCP9808 ±0.0625 °C, MS5803 ±1 °C) is well within 0.01 °C resolution. Library `getTemperature()` must be updated to read from the new addresses with the new divisor (100, not 10000).
-
 ## Housing
 
 ### Large-form-factor PTH design
