@@ -157,7 +157,7 @@ const uint8_t ADR_Alt = 0x41; //Alternative device address  //WARNING! When a #d
 
 uint8_t Config = 0; //Global config value
 
-uint8_t Reg[26] = {0}; //Initialize registers
+uint8_t Reg[64] = {0}; //Initialize registers; 0x00–0x1F = Page 0 (identity), 0x20–0x3F = Page 1 (sensor data)
 bool StartSample = true; //Flag used to start a new converstion, make a conversion on startup
 // const unsigned int UpdateRate = 5; //Rate of update
 const unsigned int UpdateRate[] = {5, 10, 60, 300}; //FIX with better numbers! 
@@ -239,32 +239,21 @@ void loop() {
     //  delay(800); //Wait for new sample
     // }
     // digitalWrite(9, HIGH); //DEBUG!
-    Reg[CTRL] = Reg[CTRL] &= 0x7F; //Clear ready flag only while new vals being written
+    Reg[0x20] &= ~0x01; //Clear ready flag (Page 1 status byte, bit 0) while new values are being written
     //LOAD VALUES
     getValues(); //Update valus before loading  //DEBUG!
-    SplitAndLoad(0x02, long(Pressure*1000.0)); //MicroBars pressure 
-    SplitAndLoad(0x06, long(Temp0*10000.0)); //1/10000 Degree C Forces integer, Min LSB = 0.0625
-    SplitAndLoad(0x0A, long(Temp1*10000.0)); //1/10000 Degree C Forces integer, Min LSB = 0.0625
+    SplitAndLoad(0x02, long(Pressure*1000.0)); //MicroBars pressure (pre-Schema-1 address)
+    SplitAndLoad(0x06, long(Temp0*10000.0)); //1/10000 Degree C (pre-Schema-1 address)
+    SplitAndLoad(0x0A, long(Temp1*10000.0)); //1/10000 Degree C (pre-Schema-1 address)
     SplitAndLoad(0x0E, uint16_t(MODEL));
     SplitAndLoad(0x12, uint16_t(GROUPID));
     SplitAndLoad(0x14, uint16_t(INDID));
     SplitAndLoad(0x16, uint16_t(FIRMWAREID));
+    SplitAndLoad(0x21, long(Pressure*1000.0));              //Schema 1: pressure, int32, µBar
+    SplitAndLoad(0x25, (unsigned int)(int16_t)_temperature_actual); //Schema 1: temp MS5803, int16, 0.01°C
+    SplitAndLoad(0x28, (unsigned int)(int16_t)(Temp0*100.0));       //Schema 1: temp ext, int16, 0.01°C
 
-    // SplitAndLoad(0x0A, MODEL);
-    // SplitAndLoad(0x0C, GROUPID);
-    // SplitAndLoad(0x0E, INDID);
-    // SplitAndLoad(0x10, FIRMWAREID);
-
-    // SplitAndLoad(0x0B, GetALS()); //Load ALS value
-    // SplitAndLoad(0x0D, GetWhite()); //Load white value
-    // SplitAndLoad(0x02, long(GetUV(0))); //Load UVA
-    // SplitAndLoad(0x07, long(GetUV(1))); //Load UVB
-    // SplitAndLoad(0x10, GetLuxGain()); //Load lux multiplier 
-    // SplitAndLoad(0x13, GetADC(0));
-    // SplitAndLoad(0x15, GetADC(1));
-    // SplitAndLoad(0x17, GetADC(2));
-
-    Reg[CTRL] = Reg[CTRL] |= 0x80; //Set ready flag //DEBUG!
+    Reg[0x20] |= 0x01; //Set ready flag (Page 1 status byte, bit 0)
     // digitalWrite(9, LOW); //DEBUG!
     StartSample = false; //Clear flag when new values updated  
   }
