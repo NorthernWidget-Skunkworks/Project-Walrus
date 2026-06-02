@@ -1,0 +1,25 @@
+{
+  "title": "Project-Walrus",
+  "description": "Northern Widget Walrus: open-source submersible pressure and temperature sensor hardware and firmware.",
+  "upload_type": "other",
+  "license": {"id": "CC-BY-SA-4.0"},
+  "creators": [
+    {
+      "name": "Wickert, Andrew D.",
+      "orcid": "0000-0002-9545-3365",
+      "affiliation": "University of Minnesota, Department of Earth & Environmental Sciences"
+    },
+    {
+      "name": "Schulz, Bobby",
+      "orcid": "0000-0002-9272-4756",
+      "affiliation": "Northern Widget LLC"
+    }
+  ],
+  "keywords": [
+    "pressure sensor",
+    "water level",
+    "submersible",
+    "open-source hardware",
+    "Northern Widget"
+  ]
+}

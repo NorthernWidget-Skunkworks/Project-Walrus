@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this hardware or software, please cite it as below."
+title: "Project-Walrus"
+version: 0.3.0
+doi: 10.5281/zenodo.2525437
+date-released: 2026-06-01
+url: "https://github.com/NorthernWidget-Skunkworks/Project-Walrus"
+repository-code: "https://github.com/NorthernWidget-Skunkworks/Project-Walrus"
+license: CC-BY-SA-4.0
+authors:
+- family-names: "Wickert"
+  given-names: "Andrew D."
+  orcid: "https://orcid.org/0000-0002-9545-3365"
+- family-names: "Schulz"
+  given-names: "Bobby"
+  orcid: "https://orcid.org/0000-0002-9272-4756"
