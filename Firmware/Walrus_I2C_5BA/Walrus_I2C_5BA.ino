@@ -152,7 +152,7 @@ uint8_t StatusReg = 0; //Register to be used to display the status of the sub mo
 
 const uint8_t ModeSelPin = 2; //Pin to select between I2C and RS-485
 
-volatile uint8_t ADR = 0x4D; //Use arbitraty address, change using generall call??
+volatile uint8_t ADR = 0x57; // Schema 1: 'W' (ASCII mnemonic)
 const uint8_t ADR_Alt = 0x41; //Alternative device address  //WARNING! When a #define is used instead, problems are caused
 
 uint8_t Config = 0; //Global config value
