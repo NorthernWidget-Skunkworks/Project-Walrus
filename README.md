@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/154994439.svg)](https://zenodo.org/badge/latestdoi/154994439)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2525437.svg)](https://doi.org/10.5281/zenodo.2525437)
 
 # The Walrus: A Pressure and Temperature Sensor for Water-Level and Barometric Measurements
 
