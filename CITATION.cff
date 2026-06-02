@@ -7,6 +7,17 @@ date-released: 2026-06-01
 url: "https://github.com/NorthernWidget-Skunkworks/Project-Walrus"
 repository-code: "https://github.com/NorthernWidget-Skunkworks/Project-Walrus"
 license: CC-BY-SA-4.0
+abstract: "Hardware design, firmware, and documentation for the Walrus, a submersible
+  pressure and temperature sensor for water-level and barometric monitoring. The Walrus
+  integrates a high-precision MS5803 pressure transducer and an MCP9808 external temperature
+  sensor, encapsulated in a waterproof housing. An ATtiny1634 microcontroller aggregates
+  sensor readings and presents a single I²C interface to the host logger."
+keywords:
+  - pressure sensor
+  - water level
+  - submersible
+  - open-source hardware
+  - Northern Widget
 authors:
 - family-names: "Wickert"
   given-names: "Andrew D."
